@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fermentation Rituals as Adaptive Protocols | Simone Leonelli</title>
+  <meta name="author" content="Simone Leonelli" />
+  <meta name="description" content="Full research report on fermentation rituals as adaptive protocols across cultures. By Simone Leonelli." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#f4f1ea;
+      --paper:#fbf8f2;
+      --ink:#18303d;
+      --muted:#5f6f79;
+      --line:rgba(24,48,61,0.15);
+      --accent:#b55b38;
+      --accent-soft:rgba(181,91,56,0.08);
+      --soft:rgba(24,48,61,0.04);
+      --shadow:0 12px 34px rgba(24,48,61,0.08);
+      --radius:22px;
+      --max:1320px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        linear-gradient(to bottom, rgba(24,48,61,0.04) 1px, transparent 1px) 0 0/100% 34px,
+        linear-gradient(to right, rgba(24,48,61,0.04) 1px, transparent 1px) center/34px 100%,
+        var(--bg);
+      line-height:1.6;
+    }
+    h1,h2,h3,h4{
+      font-family:"Space Grotesk", Inter, sans-serif;
+      line-height:1.06;
+      letter-spacing:-0.03em;
+      margin:0 0 0.7rem;
+    }
+    p{margin:0 0 1rem}
+    a{color:var(--accent); text-decoration:none; word-break:break-word}
+    a:hover{text-decoration:underline}
+    .wrap{width:min(calc(100% - 24px), var(--max)); margin:0 auto}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      border-bottom:1px solid var(--line);
+      background:rgba(244,241,234,0.88);
+      backdrop-filter:blur(12px);
+    }
+    .topbar-inner{
+      display:flex; gap:16px; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:0;
+      font-weight:700;
+    }
+    .mark{
+      width:14px; height:14px; border-radius:50%;
+      background:var(--accent); box-shadow:0 0 0 8px var(--accent-soft);
+      flex:0 0 auto;
+    }
+    .brand small{
+      display:block; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em;
+      font-size:0.76rem;
+    }
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center}
+    nav a{
+      padding:8px 11px; border-radius:999px; color:var(--ink); font-size:0.92rem;
+    }
+    nav a:hover{background:var(--soft); text-decoration:none}
+    .back-link{
+      display:inline-flex; align-items:center; gap:6px;
+      color:var(--muted); font-size:0.86rem; padding:6px 10px;
+      border-radius:999px; border:1px solid var(--line);
+    }
+    .back-link:hover{background:var(--soft); text-decoration:none; color:var(--ink)}
+
+    .hero{padding:48px 0 22px}
+    .hero-grid{
+      display:grid; grid-template-columns:1.2fr 0.8fr; gap:18px;
+    }
+    .card{
+      background:rgba(251,248,242,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-main{padding:28px; position:relative; overflow:hidden}
+    .hero-main:after{
+      content:"";
+      position:absolute; right:-70px; bottom:-80px;
+      width:260px; height:260px;
+      background:radial-gradient(circle, rgba(181,91,56,0.16), rgba(181,91,56,0) 72%);
+      pointer-events:none;
+    }
+    .eyebrow{
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      font-size:0.8rem;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    h1{font-size:clamp(2.2rem, 5vw, 4.7rem); max-width:12ch}
+    .dek{font-size:clamp(1.02rem, 1.8vw, 1.24rem); color:var(--muted); max-width:68ch}
+    .meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+    .pill{
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.55);
+      font-size:0.9rem; font-weight:600;
+    }
+    /* Author byline */
+    .byline{
+      display:flex; align-items:center; gap:10px;
+      margin-top:18px; padding-top:16px;
+      border-top:1px solid var(--line);
+    }
+    .byline-avatar{
+      width:32px; height:32px; border-radius:50%;
+      background:var(--accent); color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:700; font-size:0.78rem; flex:0 0 auto;
+    }
+    .byline-text{font-size:0.88rem}
+    .byline-text strong{display:block; font-weight:700}
+    .byline-text span{color:var(--muted)}
+
+    .hero-side{padding:20px; display:grid; gap:14px}
+    .metric{
+      padding:18px; border-radius:18px; border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(24,48,61,0.03), rgba(24,48,61,0.01));
+    }
+    .metric strong{
+      display:block; font-family:"Space Grotesk", sans-serif; font-size:1.9rem;
+    }
+    .metric span{color:var(--muted)}
+    main section{padding:20px 0}
+    .section-head{
+      display:flex; justify-content:space-between; align-items:end; gap:16px; margin-bottom:14px;
+    }
+    .section-head h2{font-size:clamp(1.65rem, 3vw, 2.45rem)}
+    .section-head p{max-width:70ch; color:var(--muted); margin:0}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    .grid-3{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px}
+    .panel{padding:22px}
+    .panel h3{font-size:1.18rem}
+    .quote{
+      padding:24px;
+      border-left:4px solid var(--accent);
+      background:linear-gradient(180deg, rgba(181,91,56,0.06), rgba(181,91,56,0.02));
+      font-family:"Space Grotesk", sans-serif;
+      font-size:clamp(1.1rem, 2vw, 1.4rem);
+    }
+    ul{margin:0; padding-left:18px}
+    li{margin:0 0 0.7rem}
+    .table-wrap{
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(251,248,242,0.88);
+      box-shadow:var(--shadow);
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:860px;
+      font-size:0.94rem;
+    }
+    th,td{
+      padding:14px 15px;
+      text-align:left;
+      vertical-align:top;
+      border-bottom:1px solid var(--line);
+    }
+    th{
+      position:sticky; top:0;
+      background:rgba(244,241,234,0.97);
+      font-family:"Space Grotesk", sans-serif;
+      font-size:0.9rem;
+    }
+    tr:last-child td{border-bottom:none}
+    details.case{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(251,248,242,0.92);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    details.case summary{
+      list-style:none;
+      cursor:pointer;
+      padding:20px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:14px;
+    }
+    details.case summary::-webkit-details-marker{display:none}
+    details.case[open] summary{border-bottom:1px solid var(--line)}
+    .case-tag{
+      color:var(--accent);
+      font-size:0.78rem;
+      text-transform:uppercase;
+      letter-spacing:0.1em;
+      font-weight:700;
+      margin-bottom:6px;
+      display:block;
+    }
+    .case-summary p{margin:0; color:var(--muted)}
+    .plus{
+      font-size:1.4rem; color:var(--accent); line-height:1; flex:0 0 auto;
+    }
+    .case-body{padding:20px 22px}
+    .case-grid{display:grid; gap:14px}
+    .source-list{display:grid; grid-template-columns:1fr 1fr; gap:12px 16px}
+    .source-item{
+      padding:14px 16px; border:1px solid var(--line); border-radius:16px;
+      background:rgba(255,255,255,0.45); font-size:0.92rem;
+    }
+    .small{font-size:0.9rem; color:var(--muted)}
+    .footer{padding:24px 0 44px; color:var(--muted); border-top:1px solid var(--line); margin-top:24px; font-size:0.9rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px}
+    code.inline{
+      background:rgba(24,48,61,0.06);
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:2px 6px;
+      font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size:0.9em;
+    }
+    @media (max-width: 980px){
+      .hero-grid,.grid-2,.source-list{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr 1fr}
+      nav{display:none}
+    }
+    @media (max-width: 640px){
+      .wrap{width:min(calc(100% - 14px), var(--max))}
+      .hero{padding:28px 0 14px}
+      .hero-main,.hero-side,.panel,.quote,.case-body{padding:18px}
+      details.case summary{padding:18px}
+      .grid-3{grid-template-columns:1fr}
+      table{min-width:740px}
+      th,td{padding:12px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <span class="mark"></span>
+        <div>
+          Fermentation Rituals as Adaptive Protocols
+          <small>Full research report · Bio/Acc</small>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html" class="back-link">&#8592; Research hub</a>
+        <a href="#summary">Summary</a>
+        <a href="#stack">Control stack</a>
+        <a href="#atlas">Atlas</a>
+        <a href="#cases">Cases</a>
+        <a href="#design">Design</a>
+        <a href="#ethics">Ethics</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <article class="card hero-main">
+          <div class="eyebrow">Research report #01 · Bio/Acc</div>
+          <h1>Fermentation rituals as adaptive protocols</h1>
+          <p class="dek">
+            Across time and geography, fermentation repeatedly emerged as a socially governed,
+            materially encoded, microbially executed system for turning seasonal abundance into
+            durable calories, safer food, flavor, ritual meaning, and collective identity.
+          </p>
+          <div class="meta">
+            <span class="pill">12 major cross-cultural cases</span>
+            <span class="pill">Microbiology + anthropology + design</span>
+            <span class="pill">Past · present · future</span>
+          </div>
+          <div class="byline">
+            <div class="byline-avatar">SL</div>
+            <div class="byline-text">
+              <strong>Simone Leonelli</strong>
+              <span>March 2026 · Bio/Acc Research</span>
+            </div>
+          </div>
+        </article>
+        <aside class="card hero-side">
+          <div class="metric">
+            <strong>5</strong>
+            <span>recurrent intelligences: ecological, microbial, temporal, sensory, social</span>
+          </div>
+          <div class="metric">
+            <strong>9</strong>
+            <span>global zones mapped across convergent process families</span>
+          </div>
+          <div class="metric">
+            <strong>1</strong>
+            <span>central claim: ritual functioned as governance for microbial uncertainty</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <main>
+      <section id="summary">
+        <div class="section-head">
+          <div>
+            <h2>Executive summary</h2>
+            <p>This version restores the missing research density: comparative ecology, social control layers, case mechanics, ethics, protocol concepts, and design implications.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Main argument</h3>
+            <p>Fermentation was not only culinary. It was a repeatable adaptive protocol under uncertainty. Human groups facing spoilage, seasonality, transport limits, feast obligations, or climate risk ritualized similar microbial processes because those processes stabilized life.</p>
+            <p class="small">Core mechanisms recur: salting, brining, anaerobic packing, lactic acid succession, mold saccharification, mixed yeast and bacterial fermentation, drying, and pit storage.</p>
+          </div>
+          <div class="card panel">
+            <h3>Why rituals mattered</h3>
+            <ul>
+              <li>They standardized timing around harvests, winters, monsoons, cyclones, and feasts.</li>
+              <li>They allocated labor through family, clan, gendered, and communal roles.</li>
+              <li>They encoded safety through taboo, vessel rules, salt levels, sensory checks, and repetition.</li>
+              <li>They preserved identity through shared taste, smell, memory, and seasonal canon.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card quote" style="margin-top:18px;">
+          Ritual was not decorative around fermentation. Ritual was the governance layer.
+        </div>
+      </section>
+
+      <section id="stack">
+        <div class="section-head">
+          <div>
+            <h2>Ritual layers that stabilize microbial ecosystems</h2>
+            <p>The report identifies a recurring control stack that appears across cultures even when ingredients, cosmologies, and vessels differ.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card panel">
+            <h3>Ecological trigger</h3>
+            <p class="small">Harvest peaks, winter, monsoon, cyclone seasons, pastoral milk surpluses, fish runs, long voyages.</p>
+          </div>
+          <div class="card panel">
+            <h3>Substrate preparation</h3>
+            <p class="small">Chopping, steaming, germinating, washing, boiling, shredding, settling, drying.</p>
+          </div>
+          <div class="card panel">
+            <h3>Microbial gating</h3>
+            <p class="small">Salt, oxygen limitation, water activity, temperature, acidity, humidity.</p>
+          </div>
+          <div class="card panel">
+            <h3>Vessel interface</h3>
+            <p class="small">Porous earthenware, crocks, pits, jars, amphorae, bags, leaf linings, headspace, venting.</p>
+          </div>
+          <div class="card panel">
+            <h3>Sensory telemetry</h3>
+            <p class="small">Bubble rate, smell shifts, sourness, color changes, texture, umami bloom.</p>
+          </div>
+          <div class="card panel">
+            <h3>Social governance</h3>
+            <p class="small">Shared labor, calendrical timing, ritual restriction, family inheritance, gifting, market norms.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>Convergent microbial mechanisms</h2>
+            <p>Different civilizations repeatedly rediscovered similar biological logics.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Vegetable ferments</h3>
+            <p>Salt and low oxygen repeatedly select for lactic acid bacteria. In cabbage ferments, early heterofermentative organisms often yield to later, more acid-tolerant communities as pH drops.</p>
+          </div>
+          <div class="card panel">
+            <h3>Cereal and starch ferments</h3>
+            <p>Lactic fermentation, saccharification, and mixed yeast plus bacteria systems transform grains and roots into more stable, flavorful, and often more digestible forms.</p>
+          </div>
+          <div class="card panel">
+            <h3>Mold platforms</h3>
+            <p>Koji systems show fermentation as infrastructure, where enzyme production by mold unlocks multiple downstream foods rather than one finished item.</p>
+          </div>
+          <div class="card panel">
+            <h3>Protein reactors</h3>
+            <p>Fish ferments repeatedly converge on salt plus time under low oxygen, with microbial selection and proteolysis generating pungency, amino acids, and umami-rich condiments.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="atlas">
+        <div class="section-head">
+          <div>
+            <h2>Global distribution across time and place</h2>
+            <p>This is not a single-origin narrative. It is a convergence atlas.</p>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Geographic zone</th>
+                <th>Canonical substrates</th>
+                <th>Dominant process primitives</th>
+                <th>Typical ritual contexts</th>
+                <th>Ecological drivers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>East Asia</td>
+                <td>Vegetables, soy, rice, fish</td>
+                <td>Brining, lactic fermentation, mold saccharification, salting, drying</td>
+                <td>Household, communal seasonal, festival-linked</td>
+                <td>Winter storage, humid summers, rice cycles, typhoons</td>
+              </tr>
+              <tr>
+                <td>South Asia</td>
+                <td>Rice, vegetables, legumes, cereals</td>
+                <td>Lactic fermentation, mixed acid + spice systems, sun exposure</td>
+                <td>Household seasonal, medicinal and cooling canons</td>
+                <td>Heat, monsoon variability, grain storage</td>
+              </tr>
+              <tr>
+                <td>Southeast Asia</td>
+                <td>Fish, rice, vegetables</td>
+                <td>Salting, halophilic fermentation, mixed systems</td>
+                <td>Household, market, regional identity foods</td>
+                <td>Coastal salt access, fish seasonality, historic refrigeration scarcity</td>
+              </tr>
+              <tr>
+                <td>Central Asia</td>
+                <td>Milk, cereals</td>
+                <td>Symbiotic dairy fermentation, mixed yeast + bacteria</td>
+                <td>Pastoral household, hospitality, mobility</td>
+                <td>Milk surplus, mobility, storage constraints</td>
+              </tr>
+              <tr>
+                <td>Middle East</td>
+                <td>Milk, vegetables, grains</td>
+                <td>Brining, yogurt and labneh systems, lactic ferments</td>
+                <td>Household and communal, religious calendars</td>
+                <td>Hot climates, water management, preservation</td>
+              </tr>
+              <tr>
+                <td>Europe</td>
+                <td>Cabbage, rye, dairy, fish</td>
+                <td>Lactic fermentation, mixed yeast + LAB, barrel and crock storage</td>
+                <td>Household winter, market, military provisioning</td>
+                <td>Winter storage, voyages, cabbage and grain harvest peaks</td>
+              </tr>
+              <tr>
+                <td>Africa</td>
+                <td>Sorghum, millet, maize, roots</td>
+                <td>Lactic fermentation, mixed alcohol + acid, starter back-slopping</td>
+                <td>Household staples, communal brewing, infant feeding</td>
+                <td>Heat, water variability, grain storage, mycotoxin pressure</td>
+              </tr>
+              <tr>
+                <td>Americas</td>
+                <td>Maize, cassava, cacao</td>
+                <td>Malting, mixed fermentation, pottery-based brewing</td>
+                <td>Feasting, reciprocity, ritual redistribution</td>
+                <td>Surplus conversion, highland storage, political economy</td>
+              </tr>
+              <tr>
+                <td>Pacific</td>
+                <td>Breadfruit, taro</td>
+                <td>Pit fermentation, paste storage, short souring cycles</td>
+                <td>Kin labor, seasonal buffering, resilience practice</td>
+                <td>Cyclone risk, short harvest windows, voyage buffering</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>Convergent timeline</h2>
+            <p>High-level chronology showing fermentation as a repeated civilizational solution rather than a single historical invention.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Period</th>
+                <th>Signal event</th>
+                <th>Interpretation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>c. 7000 BCE</td>
+                <td>Archaeological evidence of pottery-based mixed ferments in East Asia</td>
+                <td>Vessels, sugars, and microbial transformation appear as early stored process knowledge.</td>
+              </tr>
+              <tr>
+                <td>1st century CE</td>
+                <td>Roman fish sauce systems</td>
+                <td>Salt, time, and logistics scale fermentation into imperial trade infrastructure.</td>
+              </tr>
+              <tr>
+                <td>6th century onward</td>
+                <td>Recorded molded grain starters in East Asian agricultural writing</td>
+                <td>Fermentation becomes platform infrastructure rather than only preservation.</td>
+              </tr>
+              <tr>
+                <td>Medieval to early modern</td>
+                <td>Commercialization of starters, vessels, and staple ferments</td>
+                <td>Household craft transitions toward regulated or market-supported production.</td>
+              </tr>
+              <tr>
+                <td>Modern era</td>
+                <td>Refrigeration, industrialization, microbiology</td>
+                <td>Dependence declines, but ritual ferments persist and re-emerge through microbiome and resilience discourse.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="cases">
+        <div class="section-head">
+          <div>
+            <h2>Comparative case studies</h2>
+            <p>Expanded case bodies retain the research side: origin, canon, process, ecology, microbial logic, social role, and modern protocol translation.</p>
+          </div>
+        </div>
+
+        <div class="case-grid">
+          <details class="case" open>
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">Japan</span>
+                <h3>Umeboshi</h3>
+                <p>Household preservation, seasonal sun drying, high-salt souring, resilience pantry logic.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <div class="table-wrap">
+                <table>
+                  <tbody>
+                    <tr><th>Ritual canon</th><td>Yearly household making, customary summer drying, long storage, and historical emergency provisioning.</td></tr>
+                    <tr><th>Stepwise process</th><td>Salt pickling of plums, rise of plum vinegar after early days, sealing and weighting, later drying and storing.</td></tr>
+                    <tr><th>Ecological logic</th><td>High salt plus drying reduces water activity and creates long-duration shelf stability in humid conditions.</td></tr>
+                    <tr><th>Microbial logic</th><td>Salt and acidity select for salt- and acid-tolerant communities while organic acids define sourness.</td></tr>
+                    <tr><th>Sensory telemetry</th><td>Sourness, salinity, aroma shifts, visible rise of plum vinegar.</td></tr>
+                    <tr><th>Modern protocol translation</th><td><span class="inline">salt + time + sun</span> as seasonal resilience pantry design rather than a one-off gourmet object.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">Korea</span>
+                <h3>Kimjang / Kimchi</h3>
+                <p>Late-autumn communal batch making for winter, identity reinforcement, vessel intelligence.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <div class="table-wrap">
+                <table>
+                  <tbody>
+                    <tr><th>Ritual canon</th><td>Collective late-autumn preparation aligned to winter need, weather, family sharing, and community bonds.</td></tr>
+                    <tr><th>Stepwise process</th><td>Brining, seasoning, packing, fermenting, and temperature-sensitive handling.</td></tr>
+                    <tr><th>Vessel interface</th><td>Onggi earthenware acts as a breathing membrane that releases CO2 while resisting contamination.</td></tr>
+                    <tr><th>Microbial logic</th><td>Lactic acid bacteria succession with cold and acid stress adaptation; bubble formation and souring act as real-time indicators.</td></tr>
+                    <tr><th>Social function</th><td>Identity, intergenerational transmission, cooperation, harmony with seasonality.</td></tr>
+                    <tr><th>Modern protocol translation</th><td>Community batch events, vented-lid fermenters, temperature-aware scheduling.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">Europe</span>
+                <h3>Sauerkraut</h3>
+                <p>Autumn cabbage becomes controlled winter insurance through anaerobic lactic succession.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <p>One of the clearest cases where household method and modern microbiology line up almost perfectly.</p>
+              <ul>
+                <li><strong>Ritual canon:</strong> autumn harvest preservation for winter.</li>
+                <li><strong>Key process:</strong> shredding, salting, packing under anaerobic conditions, fermenting over weeks.</li>
+                <li><strong>Microbial succession:</strong> early heterofermenters give way to more acid-tolerant lactic organisms.</li>
+                <li><strong>Modern translation:</strong> baseline lactic jar protocol with salt-by-weight, pH logging, and repeatable records.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">East Asia</span>
+                <h3>Miso and koji</h3>
+                <p>Mold as platform infrastructure for flavor, amino acids, beverages, and long-duration pantry architecture.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <ul>
+                <li><strong>Canonical shift:</strong> fermentation becomes a platform layer rather than only a preserved dish.</li>
+                <li><strong>Mechanism:</strong> mold produces amylases and proteases; later bacterial and yeast stages expand flavor.</li>
+                <li><strong>Interface problem:</strong> metabolic heat requires active cooling and humidity control.</li>
+                <li><strong>Modern translation:</strong> home-scale koji microclimate appliance or studio protocol.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">Japan / broader rice systems</span>
+                <h3>Amazake and rice ferments</h3>
+                <p>Warm enzymatic saccharification versus ambient souring, often confused but mechanistically distinct.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <ul>
+                <li><strong>Amazake logic:</strong> warm hold around 50 to 60°C for enzyme-driven starch breakdown, sweetness mainly from glucose.</li>
+                <li><strong>Parallel traditions:</strong> South and East Asian rice ferments use different ambient and mixed microbial logics.</li>
+                <li><strong>Modern translation:</strong> separate clearly labeled <span class="inline">two-temperature rice pipeline</span> protocols.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">Caucasus</span>
+                <h3>Kefir</h3>
+                <p>Starter grains as living inheritance, household continuity, and reusable microbial capital.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <ul>
+                <li><strong>Microbial form:</strong> symbiotic bacteria and yeast held inside a stable grain matrix.</li>
+                <li><strong>Ecological role:</strong> converts short-lived milk into more stable and portable food.</li>
+                <li><strong>Social role:</strong> hospitality, household continuity, starter inheritance.</li>
+                <li><strong>Modern translation:</strong> lineage tracking, hygiene logs, starter asset governance.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">Eastern Europe</span>
+                <h3>Kvass</h3>
+                <p>Light cereal fermentation that turns stale bread and grain into bounded refreshment.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <p>Kvass shows how scarcity can be converted into a desirable everyday drink without losing microbial liveliness.</p>
+              <ul>
+                <li>Mixed yeast and LAB system.</li>
+                <li>No post-fermentation heat processing in many versions, so viable counts can remain high.</li>
+                <li>Modern use case: bread surplus converter with alcohol bounds and acidity targets.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">India</span>
+                <h3>Kanji and achar systems</h3>
+                <p>Hot-weather lactic souring, spice canon, summer household ritual, digestion lore.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <ul>
+                <li><strong>Kanji:</strong> spontaneous lactic fermentation of black carrot and beetroot with mustard, chili, and salt.</li>
+                <li><strong>Reported signals:</strong> steep pH drop, acidity rise, LAB dominance under certain salt and temperature conditions.</li>
+                <li><strong>Broader achar logic:</strong> mixed bacteria, yeasts, spices, and salts inside one of the oldest preservation canons.</li>
+                <li><strong>Modern translation:</strong> hot-weather sour drink protocol with pH instrumentation and preserved spice canon.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">Mediterranean / Southeast Asia</span>
+                <h3>Garum and pla ra</h3>
+                <p>Protein fermentation as slow reactor, where salinity and anaerobiosis govern pungency, umami, and risk.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <ul>
+                <li><strong>Garum:</strong> Roman fish sauce production scaled into trade infrastructure.</li>
+                <li><strong>Pla ra:</strong> high-salt fermented fish with halophilic and lactic taxa shifting by recipe and salinity.</li>
+                <li><strong>Common logic:</strong> fish, salt, time, containers, and long maturation.</li>
+                <li><strong>Critical caveat:</strong> pathogen risk means modern translation needs serious salinity and hygiene control.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">Andes</span>
+                <h3>Chicha</h3>
+                <p>Fermentation embedded in feasting, labor reciprocity, and status rather than only consumption.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <ul>
+                <li><strong>Process:</strong> soaking, germination, drying, grinding, boiling, fermenting over a few days.</li>
+                <li><strong>Microbial logic:</strong> LAB and acetic acid bacteria often form a core community.</li>
+                <li><strong>Political economy:</strong> hosts repay labor with drink and food; brewing capacity shapes prestige.</li>
+                <li><strong>Modern translation:</strong> event fermentation playbook tied to calendars and communal labor.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">West Africa</span>
+                <h3>Ogi and sorghum systems</h3>
+                <p>Fermentation as nutritional modification, staple design, and infant feeding infrastructure.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <ul>
+                <li><strong>Ogi:</strong> steeping, milling, sieving, settling, souring through staged household operations.</li>
+                <li><strong>Functional logic:</strong> modifies digestibility, acids, sensory profile, and some anti-nutritional factors.</li>
+                <li><strong>Sorghum beers:</strong> often combine lactic and alcoholic phases in communal drinking systems.</li>
+                <li><strong>Modern translation:</strong> infant-safe souring protocol plus starter-informed cereal ferment systems.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="case-summary">
+                <span class="case-tag">Pacific</span>
+                <h3>Breadfruit pits and poi</h3>
+                <p>Pit fermentation and short souring cycles as cyclone buffer, voyage insurance, and flavor architecture.</p>
+              </div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="case-body">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Attribute</th><th>Breadfruit pits</th><th>Poi souring</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Vessel interface</td><td>Leaf-lined underground pits</td><td>Container-held paste under semi-anaerobic conditions</td></tr>
+                    <tr><td>Ecological driver</td><td>Cyclones, short harvests, long storage needs</td><td>Short-cycle storage and flavor preference</td></tr>
+                    <tr><td>Time scale</td><td>Months to year</td><td>Days</td></tr>
+                    <tr><td>Microbial logic</td><td>Anaerobic acidifying storage system</td><td>Acid-producing bacteria and yeasts reshape community rapidly</td></tr>
+                    <tr><td>Modern translation</td><td>Community starch bank design</td><td>Short-cycle sour paste with safety monitoring</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>Comparative mechanism table</h2>
+            <p>One compressed view across the 12 major cases.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Case</th>
+                <th>Dominant mechanism</th>
+                <th>Typical time scale</th>
+                <th>Key vessel interface</th>
+                <th>Seasonality driver</th>
+                <th>Social role</th>
+                <th>Modern takeaway</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Umeboshi</td><td>High-salt pickling + drying</td><td>Weeks to months</td><td>Jars, bags, weights, sun racks</td><td>Summer drying window</td><td>Household resilience</td><td>Salt + sun pantry logic</td></tr>
+              <tr><td>Kimchi</td><td>Lactic fermentation with CO2 management</td><td>Days to weeks</td><td>Onggi or vented jars</td><td>Late autumn</td><td>Identity and sharing</td><td>Container as gas interface</td></tr>
+              <tr><td>Sauerkraut</td><td>LAB succession</td><td>Weeks</td><td>Crocks, seals, weights</td><td>Autumn harvest</td><td>Winter storage</td><td>Baseline lactic jar protocol</td></tr>
+              <tr><td>Miso / koji</td><td>Mold enzymes + long mixed fermentation</td><td>Months to years</td><td>Controlled culture rooms, mash vessels</td><td>Year-round infrastructure</td><td>Culinary canon</td><td>Koji as platform pipeline</td></tr>
+              <tr><td>Amazake</td><td>Warm saccharification</td><td>Hours</td><td>Temperature-controlled vessel</td><td>Festival and household use</td><td>Comfort and seasonal use</td><td>Separate warm vs ambient rice logic</td></tr>
+              <tr><td>Kefir</td><td>Symbiotic grain inoculation</td><td>Days, repeated cycles</td><td>Grain matrix as starter object</td><td>Milk surplus</td><td>Hospitality and lineage</td><td>Starter asset governance</td></tr>
+              <tr><td>Kvass</td><td>Yeast + LAB cereal beverage</td><td>Days</td><td>Light fermentation vessels</td><td>Bread and grain cycles</td><td>Everyday refreshment</td><td>Bounded alcohol control</td></tr>
+              <tr><td>Kanji</td><td>Lactic sour drink with spice and salt</td><td>Days to weeks</td><td>Jars with warm exposure</td><td>Hot season canon</td><td>Seasonal digestion lore</td><td>pH-instrumented household souring</td></tr>
+              <tr><td>Garum</td><td>Salted fish autolysis and fermentation</td><td>Weeks to months</td><td>Vats, jars, amphorae</td><td>Coastal fish and salt cycles</td><td>Trade infrastructure</td><td>Salted protein reactor discipline</td></tr>
+              <tr><td>Pla ra</td><td>Halophilic + LAB communities</td><td>Months</td><td>Sealed containers</td><td>Fish seasonality</td><td>Regional identity</td><td>Salinity as selector</td></tr>
+              <tr><td>Chicha</td><td>Mixed LAB + AAB after malting</td><td>2 to 7 days</td><td>Pots and jars</td><td>Feast scheduling</td><td>Reciprocity and prestige</td><td>Event fermentation playbook</td></tr>
+              <tr><td>Ogi</td><td>Cereal steeping and souring</td><td>Staged 48h cycles</td><td>Buckets, cloth, settling vessels</td><td>Staple processing</td><td>Weaning + staple use</td><td>Standardized souring stages</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="design">
+        <div class="section-head">
+          <div>
+            <h2>Jar as interface and design implications</h2>
+            <p>The vessel is not passive storage. It defines oxygen flux, CO2 release, contamination pathways, and microbial dynamics.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Interface lessons</h3>
+            <ul>
+              <li>Onggi suggests gas-permeable safety logic.</li>
+              <li>Koji rooms show active thermal and humidity control requirements.</li>
+              <li>Pits demonstrate low-energy long-duration preservation under climate pressure.</li>
+              <li>Weights, cloths, headspace, and venting are all analog control systems.</li>
+            </ul>
+          </div>
+          <div class="card panel">
+            <h3>Product concepts</h3>
+            <ul>
+              <li>Breathing-lid ferment jars inspired by earthenware gas exchange.</li>
+              <li>Koji microclimate appliances for stable mold cultivation.</li>
+              <li>Starter lineage ledgers for kefir, back-slopping, and household culture continuity.</li>
+              <li>Community seasonal ferment studios for apartment buildings, schools, and neighborhood kitchens.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:18px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Concept</th>
+                <th>Ritual inspiration</th>
+                <th>Technical differentiator</th>
+                <th>Target user</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Breathing-lid jar line</td><td>Onggi</td><td>Managed gas release with contamination resistance</td><td>Urban home fermenters</td></tr>
+              <tr><td>Koji microclimate appliance</td><td>Koji room constraints</td><td>Heat removal + humidity control</td><td>Home and small producers</td></tr>
+              <tr><td>Fermentation logbook app</td><td>Household governance and Kimjang coordination</td><td>pH logging, batch history, lineage tracking</td><td>Families and community kitchens</td></tr>
+              <tr><td>Cyclone buffer starch bank</td><td>Pacific pit fermentation</td><td>Breathable storage with controlled fermentation guides</td><td>Remote and climate-risk communities</td></tr>
+              <tr><td>Safe fish sauce starter service</td><td>Garum and Southeast Asian fish systems</td><td>Lab-screened starter options + salinity calculators</td><td>Artisan producers</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>Actionable modern protocols</h2>
+            <p>The report treated these as compounding home or community infrastructure rather than clever one-off ferments.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Protocol</th>
+                <th>Minimal steps</th>
+                <th>Instrumentation</th>
+                <th>Primary caution</th>
+                <th>What it compounds into</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Baseline lactic jar</td><td>Weigh salt, pack anaerobic, ferment moderately</td><td>Scale, thermometer, pH strips</td><td>Salt and temperature drift</td><td>Most vegetable ferments</td></tr>
+              <tr><td>CO2-vented fermenter</td><td>Use vented lids or permeable vessels</td><td>Pressure relief lid</td><td>Do not trap pressure unsafely</td><td>Kimchi and kraut reliability</td></tr>
+              <tr><td>Seasonal batch sprint</td><td>Align one weekend to harvest season</td><td>Calendar, roster, logs</td><td>Heat swings and hygiene</td><td>Community ritual continuity</td></tr>
+              <tr><td>Starter lineage registry</td><td>Track kefir grains, koji, back-slopping cultures</td><td>Notebook or simple database</td><td>Contamination through casual handling</td><td>Reusable microbial assets</td></tr>
+              <tr><td>Koji microclimate</td><td>Manage humidity, temperature, airflow</td><td>Sensors</td><td>Overheating stops growth</td><td>Multiple koji-derived products</td></tr>
+              <tr><td>Two-temperature rice pipeline</td><td>Separate warm saccharification from ambient souring</td><td>Thermostat + jar</td><td>Protocol confusion</td><td>Amazake plus sour rice variants</td></tr>
+              <tr><td>Event fermentation playbook</td><td>Map brewing to feast dates and labor needs</td><td>Checklist, thermal cues</td><td>Contamination and alcohol drift</td><td>Calendar-linked communal production</td></tr>
+              <tr><td>Pit-to-container translation</td><td>Simulate low oxygen but avoid unsafe sealing</td><td>Breathable liners, vents</td><td>Low-acid botulism risk</td><td>Modern starch banks</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="ethics">
+        <div class="section-head">
+          <div>
+            <h2>Cultural sensitivity and ethics</h2>
+            <p>The full report emphasized that protocol extraction without context risks appropriation, flattening, and unsafe simplification.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Main ethical risks</h3>
+            <ul>
+              <li>Sacred or identity-bound practices rebranded as generic wellness content.</li>
+              <li>Commercial value extracted away from source communities.</li>
+              <li>Unsafe translation when ritual cues are copied but parameters are not understood.</li>
+              <li>Romanticization of unpaid or gendered labor without acknowledging its burden.</li>
+            </ul>
+          </div>
+          <div class="card panel">
+            <h3>Mitigation approaches</h3>
+            <ul>
+              <li>Use correct names and attribute origin clearly.</li>
+              <li>Favor partnership and community-led storytelling.</li>
+              <li>Document safety targets, not only aesthetics.</li>
+              <li>Treat rituals as living knowledge systems, not branding raw material.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:18px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Risk area</th>
+                <th>What can go wrong</th>
+                <th>Mitigation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Sacred or identity-bound practice</td><td>Misuse of names, symbols, or festival contexts</td><td>Correct naming, attribution, avoid sacred symbolism in product framing</td></tr>
+              <tr><td>Benefit extraction</td><td>Commercial value captured elsewhere</td><td>Partnerships, revenue sharing, preservation support</td></tr>
+              <tr><td>Safety translation</td><td>Copied rituals without parameter control</td><td>Include salt, pH, temperature, and hygiene guidance</td></tr>
+              <tr><td>Origin misrepresentation</td><td>False authenticity claims</td><td>Transparent provenance and careful language</td></tr>
+              <tr><td>Labor romanticization</td><td>Invisible unpaid work turned into aesthetic myth</td><td>Acknowledge labor history and social cost</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="sources">
+        <div class="section-head">
+          <div>
+            <h2>Selected source spine</h2>
+            <p>Long URLs kept in visible form for reuse, notes, and agent ingestion.</p>
+          </div>
+        </div>
+
+        <div class="source-list">
+          <div class="source-item">UNESCO Kimjang: <a href="https://ich.unesco.org/en/RL/kimjang-making-and-sharing-kimchi-in-the-republic-of-korea-00881" target="_blank" rel="noopener">ich.unesco.org</a></div>
+          <div class="source-item">UNESCO Washoku: <a href="https://ich.unesco.org/en/RL/washoku-traditional-dietary-cultures-of-the-japanese-notably-for-the-celebration-of-new-year-00869" target="_blank" rel="noopener">ich.unesco.org</a></div>
+          <div class="source-item">USDA fermented vegetables review: <a href="https://www.ars.usda.gov/ARSUserFiles/60702500/Fermented%20Veg%20Manuscripts/p437.pdf" target="_blank" rel="noopener">ars.usda.gov</a></div>
+          <div class="source-item">Codex / FAO fermented vegetables category: <a href="https://www.fao.org/gsfaonline/foods/details.html?id=84" target="_blank" rel="noopener">fao.org</a></div>
+          <div class="source-item">Global fermented foods microbiology review: <a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2016.00377/full" target="_blank" rel="noopener">frontiersin.org</a></div>
+          <div class="source-item">Fermented foods and gut microbiome review: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9003261/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></div>
+          <div class="source-item">Onggi permeability and kimchi fermentation: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10072942/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></div>
+          <div class="source-item">Koji Starter and Koji World in Japan: <a href="https://www.mdpi.com/2309-608X/7/7/569" target="_blank" rel="noopener">mdpi.com</a></div>
+          <div class="source-item">Aspergillus oryzae domestication: <a href="https://academic.oup.com/dnaresearch/article/26/6/465/5637755" target="_blank" rel="noopener">academic.oup.com</a></div>
+          <div class="source-item">Miso / koji fermentation review: <a href="https://pubmed.ncbi.nlm.nih.gov/34056716/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></div>
+          <div class="source-item">Amazake review: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8227387/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></div>
+          <div class="source-item">Kefir review: <a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2015.01177/full" target="_blank" rel="noopener">frontiersin.org</a></div>
+          <div class="source-item">Kvass microbiology: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5105628/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></div>
+          <div class="source-item">Kanji fermentation parameters: <a href="https://www.sciencedirect.com/science/article/abs/pii/S1878450X18300763" target="_blank" rel="noopener">sciencedirect.com</a></div>
+          <div class="source-item">Pla-ra microbiota: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7808594/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></div>
+          <div class="source-item">Roman fish processing scholarship: <a href="https://www.ancientportsantiques.com/wp-content/uploads/Documents/AUTHORS/Curtis2005-FishProcessing.pdf" target="_blank" rel="noopener">ancientportsantiques.com</a></div>
+          <div class="source-item">Chicha microbial populations: <a href="https://www.mdpi.com/2076-2607/8/1/93" target="_blank" rel="noopener">mdpi.com</a></div>
+          <div class="source-item">Chicha energetics of feasting: <a href="https://www.rom.on.ca/sites/default/files/sites/default/files/imce/beerap3a.pdf" target="_blank" rel="noopener">rom.on.ca</a></div>
+          <div class="source-item">Ogi stages and processing: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5849929/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></div>
+          <div class="source-item">Breadfruit preservation poster: <a href="https://spccfpstore1.blob.core.windows.net/digitallibrary-docs/files/5e/5ee3e519a19b6f97f0bfcd90a2d0a054.pdf" target="_blank" rel="noopener">spccfpstore1.blob.core.windows.net</a></div>
+          <div class="source-item">Breadfruit anthropology: <a href="https://www.persee.fr/doc/jso_0300-953x_1984_num_40_79_2544" target="_blank" rel="noopener">persee.fr</a></div>
+          <div class="source-item">Poi fermentation bulletin: <a href="https://www.ctahr.hawaii.edu/oc/freepubs/pdf/B-070.pdf" target="_blank" rel="noopener">ctahr.hawaii.edu</a></div>
+          <div class="source-item">Fermented foods and health review: <a href="https://isappscience.org/wp-content/uploads/2018/11/Marco-health-benefits-fermented-foods-ISAPP-rev-171.pdf" target="_blank" rel="noopener">isappscience.org</a></div>
+          <div class="source-item">Traditional fermented cereals review: <a href="https://www.mdpi.com/2072-6643/12/4/1118" target="_blank" rel="noopener">mdpi.com</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 <strong>Simone Leonelli</strong> · Bio/Acc Research · Report #01</span>
+      <a href="index.html">← Back to Research Hub</a>
+    </footer>
+  </div>
+</body>
+</html>

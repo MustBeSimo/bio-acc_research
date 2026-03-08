@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bio/Acc Research — Simone Leonelli</title>
+  <meta name="author" content="Simone Leonelli" />
+  <meta name="description" content="Independent research on biology, fermentation, and adaptive systems by Simone Leonelli." />
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --paper: #fbf8f2;
+      --ink: #18303d;
+      --muted: #5f6f79;
+      --line: rgba(24,48,61,0.15);
+      --accent: #b55b38;
+      --accent-soft: rgba(181,91,56,0.08);
+      --soft: rgba(24,48,61,0.04);
+      --shadow: 0 12px 34px rgba(24,48,61,0.08);
+      --radius: 22px;
+      --max: 1200px;
+    }
+    * { box-sizing: border-box }
+    html { scroll-behavior: smooth }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background:
+        linear-gradient(to bottom, rgba(24,48,61,0.04) 1px, transparent 1px) 0 0/100% 34px,
+        linear-gradient(to right, rgba(24,48,61,0.04) 1px, transparent 1px) center/34px 100%,
+        var(--bg);
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      font-family: "Space Grotesk", Inter, sans-serif;
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.7rem;
+    }
+    p { margin: 0 0 1rem }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .wrap { width: min(calc(100% - 24px), var(--max)); margin: 0 auto }
+
+    /* TOPBAR */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      border-bottom: 1px solid var(--line);
+      background: rgba(244,241,234,0.88);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner {
+      display: flex; gap: 16px; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 700; font-size: 1rem;
+    }
+    .mark {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 0 8px var(--accent-soft);
+      flex: 0 0 auto;
+    }
+    .brand small {
+      display: block; color: var(--muted); text-transform: uppercase;
+      letter-spacing: 0.08em; font-size: 0.76rem; font-weight: 400;
+    }
+    nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end }
+    nav a {
+      padding: 8px 11px; border-radius: 999px; color: var(--ink); font-size: 0.92rem;
+    }
+    nav a:hover { background: var(--soft); text-decoration: none }
+
+    /* HERO */
+    .hero { padding: 56px 0 32px }
+    .eyebrow {
+      color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em;
+      font-size: 0.78rem; font-weight: 700; margin-bottom: 14px;
+    }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); max-width: 14ch; margin-bottom: 1rem }
+    .hero-dek {
+      font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--muted); max-width: 62ch; margin-bottom: 28px;
+    }
+    .author-line {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 8px;
+    }
+    .author-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; flex: 0 0 auto;
+    }
+    .author-name { font-weight: 600; font-size: 0.95rem }
+    .author-desc { font-size: 0.85rem; color: var(--muted) }
+
+    /* RESEARCH GRID */
+    .section-label {
+      text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.78rem;
+      font-weight: 700; color: var(--muted); margin-bottom: 18px;
+      padding-bottom: 10px; border-bottom: 1px solid var(--line);
+    }
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+    .research-card {
+      background: rgba(251,248,242,0.92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .research-card:hover {
+      box-shadow: 0 20px 48px rgba(24,48,61,0.13);
+      transform: translateY(-2px);
+    }
+    .card-tag {
+      color: var(--accent); font-size: 0.76rem; text-transform: uppercase;
+      letter-spacing: 0.1em; font-weight: 700; margin-bottom: 10px;
+    }
+    .research-card h3 {
+      font-size: 1.2rem; margin-bottom: 0.5rem;
+    }
+    .research-card p {
+      font-size: 0.94rem; color: var(--muted); flex: 1;
+    }
+    .card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line);
+      font-size: 0.86rem;
+    }
+    .card-date { color: var(--muted) }
+    .card-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--accent); color: #fff;
+      padding: 7px 14px; border-radius: 999px;
+      font-size: 0.86rem; font-weight: 600;
+    }
+    .card-link:hover { text-decoration: none; opacity: 0.88 }
+    .card-link svg { width: 13px; height: 13px }
+
+    /* COMING SOON card */
+    .research-card.coming-soon {
+      opacity: 0.55;
+      pointer-events: none;
+      border-style: dashed;
+    }
+    .research-card.coming-soon .card-link {
+      background: var(--muted);
+    }
+
+    /* ABOUT */
+    .about-strip {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(251,248,242,0.92);
+      box-shadow: var(--shadow);
+      padding: 28px 32px;
+      display: flex; align-items: flex-start; gap: 24px;
+      margin-bottom: 56px;
+    }
+    .about-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1.1rem; flex: 0 0 auto;
+    }
+    .about-strip h2 { font-size: 1.1rem; margin-bottom: 6px }
+    .about-strip p { color: var(--muted); font-size: 0.95rem; margin: 0 }
+
+    /* FOOTER */
+    .footer {
+      padding: 24px 0 48px; color: var(--muted); font-size: 0.9rem;
+      border-top: 1px solid var(--line); margin-top: 16px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 680px) {
+      .research-grid { grid-template-columns: 1fr }
+      .about-strip { flex-direction: column; gap: 14px; padding: 20px }
+      .hero h1 { font-size: 2.2rem }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <span class="mark"></span>
+        <div>
+          Bio/Acc Research
+          <small>by Simone Leonelli</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#research">Research</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <section class="hero">
+      <div class="eyebrow">Independent research · biology &amp; adaptive systems</div>
+      <h1>Research hub</h1>
+      <p class="hero-dek">
+        Deep reports on fermentation, microbiology, human adaptive systems, and the
+        intersection of culture and biology. Built to be read, cited, and used.
+      </p>
+      <div class="author-line">
+        <div class="author-avatar">SL</div>
+        <div>
+          <div class="author-name">Simone Leonelli</div>
+          <div class="author-desc">Writer &amp; researcher · Bio/Acc</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-label">Published research</div>
+      <div class="research-grid">
+
+        <!-- Report 01 -->
+        <div class="research-card">
+          <div class="card-tag">Fermentation · Anthropology · Microbiology</div>
+          <h3>Fermentation Rituals as Adaptive Protocols</h3>
+          <p>
+            Across time and geography, fermentation repeatedly emerged as a socially governed,
+            materially encoded, microbially executed system for turning seasonal abundance into
+            durable calories, safer food, flavor, ritual meaning, and collective identity.
+            12 major cross-cultural cases.
+          </p>
+          <div class="card-footer">
+            <span class="card-date">March 2026 · Report #01</span>
+            <a class="card-link" href="fermentation-rituals-full-report.html">
+              Read
+              <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Placeholder: next report -->
+        <div class="research-card coming-soon">
+          <div class="card-tag">Coming soon</div>
+          <h3>Next Report</h3>
+          <p>
+            The next research deep-dive is in progress. Topics include gut microbiome
+            architecture, traditional food systems, and bio-accelerationist frameworks.
+          </p>
+          <div class="card-footer">
+            <span class="card-date">In progress</span>
+            <span class="card-link">Soon</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-label">About</div>
+      <div class="about-strip">
+        <div class="about-avatar">SL</div>
+        <div>
+          <h2>Simone Leonelli</h2>
+          <p>
+            Independent writer and researcher exploring biology, fermentation, microbiology,
+            adaptive systems, and the overlap between human culture and biochemical intelligence.
+            These reports are built for depth — each one attempts to reconstruct a full research
+            picture from primary sources, case studies, and design implications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="wrap">
+    <footer class="footer">
+      <span>© 2026 Simone Leonelli · Bio/Acc Research</span>
+      <span>Published via GitHub Pages</span>
+    </footer>
+  </div>
+
+</body>
+</html>
