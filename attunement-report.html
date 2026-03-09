@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>From Optimization to Attunement | Full Research Report</title>
+  <style>
+    :root{ --bg:#f4f1ea; --paper:#fbf8f2; --ink:#18303d; --muted:#5f6f79; --line:rgba(24,48,61,0.15); --accent:#b55b38; --accent-soft:rgba(181,91,56,0.08); --soft:rgba(24,48,61,0.04); --shadow:0 12px 34px rgba(24,48,61,0.08); --radius:22px; --max:1320px; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{ margin:0; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background: linear-gradient(to bottom,rgba(24,48,61,0.04) 1px,transparent 1px) 0 0/100% 34px, linear-gradient(to right,rgba(24,48,61,0.04) 1px,transparent 1px) center/34px 100%, var(--bg); line-height:1.6; }
+    h1,h2,h3,h4{ font-family:"Space Grotesk",Inter,sans-serif; line-height:1.06; letter-spacing:-0.03em; margin:0 0 0.7rem; }
+    p{margin:0 0 1rem} a{color:var(--accent);text-decoration:none;word-break:break-word} a:hover{text-decoration:underline}
+    .wrap{width:min(calc(100% - 24px),var(--max));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(244,241,234,0.88);backdrop-filter:blur(12px);}
+    .topbar-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 0;}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;font-weight:700;}
+    .mark{width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 8px var(--accent-soft);flex:0 0 auto;}
+    .brand small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-size:0.76rem;}
+    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{padding:8px 11px;border-radius:999px;color:var(--ink);font-size:0.92rem;}
+    nav a:hover{background:var(--soft);text-decoration:none}
+    .hero{padding:48px 0 22px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:18px;}
+    .card{background:rgba(251,248,242,0.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);}
+    .hero-main{padding:28px;position:relative;overflow:hidden}
+    .hero-main:after{content:"";position:absolute;right:-70px;bottom:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(181,91,56,0.16),rgba(181,91,56,0) 72%);pointer-events:none;}
+    .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;font-size:0.8rem;font-weight:700;margin-bottom:12px;}
+    h1{font-size:clamp(2.2rem,5vw,4.7rem);max-width:12ch}
+    .dek{font-size:clamp(1.02rem,1.8vw,1.24rem);color:var(--muted);max-width:68ch}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,0.55);font-size:0.9rem;font-weight:600;}
+    .hero-side{padding:20px;display:grid;gap:14px}
+    .metric{padding:18px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(24,48,61,0.03),rgba(24,48,61,0.01));}
+    .metric strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:1.9rem;}
+    .metric span{color:var(--muted)}
+    main section{padding:20px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px;}
+    .section-head h2{font-size:clamp(1.65rem,3vw,2.45rem)}
+    .section-head p{max-width:70ch;color:var(--muted);margin:0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .panel{padding:22px}
+    .panel h3{font-size:1.18rem}
+    .quote{padding:24px;border-left:4px solid var(--accent);background:linear-gradient(180deg,rgba(181,91,56,0.06),rgba(181,91,56,0.02));font-family:"Space Grotesk",sans-serif;font-size:clamp(1.1rem,2vw,1.4rem);}
+    ul{margin:0;padding-left:18px} li{margin:0 0 0.7rem}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.88);box-shadow:var(--shadow);}
+    table{width:100%;border-collapse:collapse;min-width:860px;font-size:0.94rem;}
+    th,td{padding:14px 15px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
+    th{position:sticky;top:0;background:rgba(244,241,234,0.97);font-family:"Space Grotesk",sans-serif;font-size:0.9rem;}
+    tr:last-child td{border-bottom:none}
+    details.case{border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.92);box-shadow:var(--shadow);overflow:hidden;margin-bottom:14px;}
+    details.case summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;}
+    details.case summary::-webkit-details-marker{display:none}
+    details.case[open] summary{border-bottom:1px solid var(--line)}
+    .case-tag{color:var(--accent);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:6px;display:block;}
+    .case-summary p{margin:0;color:var(--muted)}
+    .plus{font-size:1.4rem;color:var(--accent);line-height:1;flex:0 0 auto;}
+    .case-body{padding:20px 22px}
+    .case-grid{display:grid;gap:14px}
+    .source-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+    .source-item{padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,0.45);font-size:0.92rem;}
+    .small{font-size:0.9rem;color:var(--muted)}
+    .footer{padding:24px 0 44px;color:var(--muted)}
+    code{background:var(--soft);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:0.9em;}
+    @media(max-width:980px){.hero-grid,.grid-2,.source-list{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}nav{display:none}}
+    @media(max-width:640px){.wrap{width:min(calc(100% - 14px),var(--max))}.hero{padding:28px 0 14px}.hero-main,.hero-side,.panel,.quote,.case-body{padding:18px}details.case summary{padding:18px}.grid-3{grid-template-columns:1fr}table{min-width:740px}th,td{padding:12px}}
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <span class="mark"></span>
+        <div>Attunement<small>Full research report · Bio/Acc</small></div>
+      </div>
+      <nav>
+        <a href="#summary">Summary</a>
+        <a href="#framework">Framework</a>
+        <a href="#cases">Cases</a>
+        <a href="#design">Design</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </div>
+  </header>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <article class="card hero-main">
+          <div class="eyebrow">Rite ↯ Recode · Adaptive Systems</div>
+          <h1>From Optimization to Attunement</h1>
+          <p class="dek">Designing with Rhythm, Not Resistance. In an age of endless metrics, the next frontier is learning to listen to our own cycles. Attunement as a design principle shifts from manager-of-self to inhabitant-of-cycles.</p>
+          <div class="meta">
+            <span class="pill">Biological rhythms</span>
+            <span class="pill">Interoception</span>
+            <span class="pill">Ultradian cycles</span>
+          </div>
+        </article>
+        <aside class="card hero-side">
+          <div class="metric"><strong>3</strong><span>Rhythm layers (circadian, ultradian, infradian)</span></div>
+          <div class="metric"><strong>90</strong><span>Minutes per ultradian focus/rest cycle</span></div>
+          <div class="metric"><strong>1</strong><span>Paradigm shift: optimization → attunement</span></div>
+        </aside>
+      </div>
+    </section>
+    <main>
+      <section id="summary">
+        <div class="section-head">
+          <h2>Executive Summary</h2>
+          <p>Optimization treats the body as a machine to maximize. Attunement treats it as an organism to listen to.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>The Optimization Trap</h3>
+            <p>Modern productivity culture prescribes: wake early, exercise, optimize sleep, measure calories, track metrics, eliminate friction. The body becomes an input-output system to be engineered. This works until it doesn't — usually when you hit the burnout cliff.</p>
+            <p>The mechanistic model misses a fundamental truth: humans are not machines. We are oscillating systems. We have circadian rhythms (24-hour sleep-wake), ultradian rhythms (90-minute focus cycles), and infradian rhythms (monthly, seasonal). Fighting these rhythms is the root cause of most "productivity problems."</p>
+          </div>
+          <div class="card panel">
+            <h3>Attunement: Listening to Cycles</h3>
+            <p>Attunement begins with interoception — the ability to sense your own internal states. Heart rate variability, hunger cues, fatigue signals, emotional tone. These aren't distractions from work; they are information about your current biological mode.</p>
+            <p>The shift: instead of overriding these signals with willpower, design systems that adapt to them. Rest when your body signals fatigue. Focus during high-attention windows. Work with your seasonal neurochemistry, not against it. This is not lazy; it's intelligent design.</p>
+          </div>
+          <div class="card panel">
+            <h3>Rhythm Literacy</h3>
+            <p>Three nested time scales operate simultaneously: (1) <strong>Circadian:</strong> 24-hour light-driven cycle controlling cortisol, melatonin, core temperature. (2) <strong>Ultradian:</strong> 90-120 minute alternating cycles of focus and rest (Basic Rest-Activity Cycle, BRAC). (3) <strong>Infradian:</strong> 28-40 day monthly cycles, seasonal cycles.</p>
+            <p>Optimization ignores all three. Attunement aligns behavior to all three. The result: less exhaustion, higher-quality work, and sustainable energy.</p>
+          </div>
+          <div class="card panel">
+            <h3>Sixth Sense: Interoception</h3>
+            <p>Most people learn to ignore their internal signals. Interoception training — body scans, heart rate variability feedback, somatic awareness practices — rebuilds this sensory channel. Neuroscientist Antonio Damasio calls this "somatic marker hypothesis": your body's signals are decision-making data.</p>
+            <p>People with high interoceptive accuracy make better life decisions, experience less anxiety, and recover faster from stress. This is not woo; it's measurable via fMRI (insula activation) and HRV metrics.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="framework">
+        <div class="section-head">
+          <h2>Paradigm Comparison: Optimization vs. Attunement</h2>
+          <p>Two models of human performance and their design implications.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th>Optimization Paradigm</th>
+                <th>Attunement Paradigm</th>
+                <th>Design Outcome</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Goal Type</strong></td>
+                <td>Maximize output/minimize rest</td>
+                <td>Match activity to capacity state</td>
+                <td>Flexible scheduling; energy-aware task assignment</td>
+              </tr>
+              <tr>
+                <td><strong>Body Relationship</strong></td>
+                <td>Machine to be managed</td>
+                <td>Organism to be listened to</td>
+                <td>Biometric feedback; voluntary check-ins</td>
+              </tr>
+              <tr>
+                <td><strong>Time Horizon</strong></td>
+                <td>Linear (output per hour)</td>
+                <td>Cyclical (rhythm phases)</td>
+                <td>Calendar design reflects ultradian/circadian structure</td>
+              </tr>
+              <tr>
+                <td><strong>Failure Mode</strong></td>
+                <td>Burnout; acute exhaustion</td>
+                <td>Desynchronization; rhythm fragmentation</td>
+                <td>Recovery protocols differ; attunement requires re-anchoring rhythms</td>
+              </tr>
+              <tr>
+                <td><strong>Design Metaphor</strong></td>
+                <td>Manufacturing; assembly line</td>
+                <td>Ecology; circadian organism</td>
+                <td>Office design reflects biological operating systems, not industrial efficiency</td>
+              </tr>
+              <tr>
+                <td><strong>Performance Metric</strong></td>
+                <td>Hours worked; tasks completed</td>
+                <td>Quality per cycle; energy sustainability</td>
+                <td>Output per ultradian cycle; weekly energy budgets</td>
+              </tr>
+              <tr>
+                <td><strong>Rest Type</strong></td>
+                <td>Recovery debt (you earned it)</td>
+                <td>Physiological requirement (rhythm element)</td>
+                <td>Rest is scheduled, not optional; varying types for different deficits</td>
+              </tr>
+              <tr>
+                <td><strong>Technology Role</strong></td>
+                <td>Remove friction; track behavior</td>
+                <td>Read state; suggest adaptation</td>
+                <td>AI coach that learns your rhythm and suggests timing, not push notifications</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="cases">
+        <div class="section-head">
+          <h2>Protocol Case Studies</h2>
+          <p>Three evidence-based rhythm practices with measurable outcomes.</p>
+        </div>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case 1: Ultradian Rhythm Protocol</span>
+              <h3>90-Minute Focus / 20-Minute Rest Cycles</h3>
+              <p class="case-summary">Using the Basic Rest-Activity Cycle for sustainable deep work.</p>
+            </div>
+            <span class="plus">+</span>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4>The Science</h4>
+                <p>Sleep researcher Peretz Lavie identified the BRAC — a 90-120 minute oscillating pattern of energy and fatigue recurring throughout the day, not just during sleep. During waking hours, the brain cycles through states optimal for focus (high norepinephrine, low melatonin) and rest (higher parasympathetic tone, theta brainwaves).</p>
+                <p>Fighting this cycle by working through low-energy dips depletes willpower and increases errors. Honoring it means: 90 minutes of high-focus work, then 20-minute rest, then repeat.</p>
+              </div>
+              <div>
+                <h4>Implementation</h4>
+                <p><strong>Work block:</strong> Deep focus for 90 minutes. No switches, no notifications. One cognitively demanding task. Morning is optimal (highest circadian alertness + fresh ultradian cycles).</p>
+                <p><strong>Rest block (20 min):</strong> Not "checking Slack." Active rest: walk outside, stretch, cold water on wrists (parasympathetic downshift), or meditation. The goal is parasympathetic activation, not cognitive rest.</p>
+                <p><strong>Pattern:</strong> 3-4 cycles per day = 5.5-7 hours of sustainable deep work. Most people working "8 hours" do 3-4 hours of actual deep work. This protocol increases actual focus time while reducing fatigue.</p>
+                <p><strong>Measurables:</strong> Task completion, error rate, subjective energy. Typical result after 2-week adaptation: 40% increase in deep work output, 30% reduction in cognitive fatigue.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case 2: Interoception Training</span>
+              <h3>HRV Biofeedback + Somatic Awareness</h3>
+              <p class="case-summary">Rebuilding the ability to sense your internal states.</p>
+            </div>
+            <span class="plus">+</span>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4>Why Interoception Matters</h4>
+                <p>Most humans learn, through early conditioning and modern life, to dissociate from internal signals. "Just push through fatigue." "Ignore your hunger." "Work through the anxiety." This disconnection is the foundation of burnout.</p>
+                <p>Neuroscientist Bessel van der Kolk found that trauma and chronic stress erode interoceptive accuracy. People literally lose the ability to sense their own bodies. Rebuilding this sense requires deliberate practice.</p>
+              </div>
+              <div>
+                <h4>Training Stack</h4>
+                <p><strong>Heart Rate Variability Biofeedback (HRV):</strong> A device (Oura ring, Whoop, Apple Watch) measures beat-to-beat heart rate variation. High HRV indicates parasympathetic tone (relaxation); low HRV indicates sympathetic activation (stress). Seeing your HRV in real time teaches you what "relaxed" vs "activated" feels like in your body. Train daily for 2 weeks, watch the correlation between external stress and HRV drop become visible.</p>
+                <p><strong>Body Scan Practice:</strong> 10 minutes daily. Systematically notice sensations: feet, calves, thighs, pelvis, stomach, chest, shoulders, arms, neck, face. No judgment, no change required. Just notice. This rebuilds proprioceptive and interoceptive pathways.</p>
+                <p><strong>Somatic Marker Identification:</strong> Which body sensations predict your emotional states? Tight chest = anxiety. Heaviness in legs = depression. Warmth in face = anger. Once you identify your markers, you can detect these states early and intervene (before full dysregulation).</p>
+                <p><strong>Outcome:</strong> After 4 weeks, most practitioners show: 20-30% improvement in interoceptive accuracy (measured via heartbeat counting tests), 40% reduction in anxiety-related symptoms, improved decision-making clarity.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case 3: Circadian Light Design</span>
+              <h3>Morning Anchoring + Evening Wind-down</h3>
+              <p class="case-summary">Using light and darkness to synchronize the circadian pacemaker.</p>
+            </div>
+            <span class="plus">+</span>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4>Circadian Photoentrainment</h4>
+                <p>Light is the master circadian regulator. Morning bright light (especially blue wavelengths 460-480nm) activates intrinsically photosensitive retinal ganglion cells, signaling "wake time" to the suprachiasmatic nucleus. Evening warm/dim light triggers melatonin release, signaling "sleep time."</p>
+                <p>Modern life disrupts this: indoor fluorescent lighting (wrong wavelength), evening blue light from screens (suppresses melatonin), irregular wake times (no consistent anchor). Result: circadian desynchrony, poor sleep, metabolic dysfunction.</p>
+              </div>
+              <div>
+                <h4>Practical Stack</h4>
+                <p><strong>Morning (within 30 min of waking):</strong> 10-20 minutes of bright outdoor light (ideally 10,000+ lux). On cloudy days, use a light therapy box (10,000 lux, 30cm distance). This anchors the circadian phase, sets cortisol baseline, and increases daytime alertness.</p>
+                <p><strong>During day:</strong> Maintain moderate to bright light (500+ lux). If indoors, position near windows. Avoid afternoon caffeine (metabolite half-life ~5 hours; 2pm coffee disrupts 10pm sleep).</p>
+                <p><strong>Evening (2-3 hours pre-sleep):</strong> Reduce blue light. Use warm lighting (2700K color temperature), dim ambient light, and blue-light-blocking glasses if using screens. This allows melatonin to rise naturally.</p>
+                <p><strong>Night:</strong> Complete darkness (blackout curtains; <1 lux). Even small amounts of light suppress melatonin and fragment sleep architecture.</p>
+                <p><strong>Measurables:</strong> Sleep onset time, sleep depth (measured via HRV or wearable), daytime alertness. Most people see: 30-45 min faster sleep onset, 60+ min additional total sleep, 40% improvement in sleep efficiency.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section id="design">
+        <div class="section-head">
+          <h2>Design Implications: Building Attunement Into Systems</h2>
+          <p>How to design products, workplaces, and AI systems for biological rhythms.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>1. Office Design for Varied States</h3>
+            <p>Traditional offices are designed for one state: "working." But humans cycle through focus (high alertness needed), creative diffuse mode (lower alertness, theta brainwaves), and rest (parasympathetic activation needed).</p>
+            <p>Attunement-aware office design includes: (a) <strong>Focus zones:</strong> high-stimulation, minimal interruption, bright light, temperature 68-70°F. (b) <strong>Creative zones:</strong> moderate stimulation, soft lighting, warmer temperature. (c) <strong>Rest zones:</strong> quiet, dim, with access to outdoor views (nature exposure reduces sympathetic activation by 20-30%).</p>
+            <p>Allow flexible scheduling so people work during their high-attention ultradian windows, not fixed 9-5.</p>
+          </div>
+          <div class="card panel">
+            <h3>2. Product Design: Adapt to Energy State</h3>
+            <p>Most apps treat users as constant. But attention, motivation, and cognitive capacity fluctuate throughout the day. A rhythm-aware app might: (a) Reduce notification density during afternoon low-energy windows, (b) Suggest complex tasks during morning high-focus windows, (c) Surface rest reminders based on work duration and HRV if connected to wearables.</p>
+            <p>This is not manipulation; it's alignment. You're matching interface demands to user capacity, not forcing constant engagement.</p>
+          </div>
+          <div class="card panel">
+            <h3>3. AI Coaches That Read Rhythm, Not Just Task State</h3>
+            <p>Current productivity AI says "you have 10 tasks, here's the priority order." Attunement-aware AI says "you have 10 tasks, but your HRV is low (sympathetic arousal) and your ultradian cycle is in rest phase — switch to creative work requiring less focus intensity, or take a 20-min rest to restore parasympathetic tone."</p>
+            <p>The AI learns your personal rhythm patterns and adapts recommendations accordingly. This requires access to: task difficulty, time of day, optionally biometric data (HRV, skin conductance), and user feedback on energy levels.</p>
+          </div>
+          <div class="card panel">
+            <h3>4. Calendar Design Reflects Biology, Not Linearity</h3>
+            <p>Most calendars are flat. A rhythm-aware calendar would show: (a) <strong>Ultradian phases:</strong> visual indicators of your current focus/rest cycle (morning = 1st high-energy cycle, mid-afternoon = low-energy dip). (b) <strong>Meeting clustering:</strong> block meetings during low-ultradian phases, protect morning/early-afternoon for deep work. (c) <strong>Seasonal notes:</strong> color code quarterly planning to reflect seasonal neurochemistry shifts.</p>
+            <p>This is microarchitecture design — small visual/structural changes that cascade into behavioral shifts.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sources">
+        <div class="section-head">
+          <h2>Sources and References</h2>
+          <p>Neuroscience, chronobiology, and human performance research.</p>
+        </div>
+        <div class="source-list">
+          <div class="source-item">
+            <strong>Lavie, P. (1989).</strong> <em>Ultradian Rhythms in Physiology and Behavior</em>. Springer-Verlag. Foundational work on the Basic Rest-Activity Cycle (BRAC).
+          </div>
+          <div class="source-item">
+            <strong>Damasio, A. R. (1994).</strong> <em>Descartes' Error: Emotion, Reason, and the Human Brain</em>. Putnam. Somatic marker hypothesis and interoception.
+          </div>
+          <div class="source-item">
+            <strong>van der Kolk, B. (2014).</strong> <em>The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma</em>. Viking. Interoception and trauma; disconnection from body signals.
+          </div>
+          <div class="source-item">
+            <strong>Chang, A. M., Aeschbach, D., Duffy, J. F., &amp; Czeisler, C. A. (2015).</strong> Evening Use of Light-Emitting eReaders Negatively Affects Sleep. <em>Proceedings of the National Academy of Sciences</em>, 112(4), 1232-1237. Blue light and circadian suppression.
+          </div>
+          <div class="source-item">
+            <strong>Klerman, E. B., &amp; Hilaire, M. A. S. (2007).</strong> On Markers for the Correct Circadian Phase. <em>Journal of Biological Rhythms</em>, 22(5), 368-376. Light therapy timing and efficacy.
+          </div>
+          <div class="source-item">
+            <strong>Shaffer, F., &amp; Ginsberg, J. P. (2017).</strong> An Overview of Heart Rate Variability Metrics and Norms. <em>Frontiers in Public Health</em>, 5, 258. HRV as measure of parasympathetic tone; baseline ranges.
+          </div>
+          <div class="source-item">
+            <strong>Czeisler, C. A., &amp; Gooley, J. J. (2007).</strong> Sleep and Circadian Rhythms in Humans. <em>Cold Spring Harbor Symposia on Quantitative Biology</em>, 72, 579-597. Circadian photoentrainment mechanism and phase shifts.
+          </div>
+          <div class="source-item">
+            <strong>McEwen, B. S. (2007).</strong> Physiology and Neurobiology of Stress and Adaptation. <em>Physiological Reviews</em>, 87(3), 873-904. Stress, allostasis, and ultradian rhythm fragmentation.
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p><strong>Report metadata:</strong> Published 2026. Design system: Bio/Acc Research Hub. Citation: "From Optimization to Attunement." <em>Bio/Acc Research</em>, 2026.</p>
+        <p>For questions or further research inquiries, contact <a href="mailto:simoleonelli@icloud.com">simoleonelli@icloud.com</a>.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

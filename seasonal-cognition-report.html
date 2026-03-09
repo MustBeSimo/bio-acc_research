@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seasonal Cognition: Four Hormonal Modes | Full Research Report</title>
+  <style>
+    :root{ --bg:#f4f1ea; --paper:#fbf8f2; --ink:#18303d; --muted:#5f6f79; --line:rgba(24,48,61,0.15); --accent:#b55b38; --accent-soft:rgba(181,91,56,0.08); --soft:rgba(24,48,61,0.04); --shadow:0 12px 34px rgba(24,48,61,0.08); --radius:22px; --max:1320px; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{ margin:0; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background: linear-gradient(to bottom,rgba(24,48,61,0.04) 1px,transparent 1px) 0 0/100% 34px, linear-gradient(to right,rgba(24,48,61,0.04) 1px,transparent 1px) center/34px 100%, var(--bg); line-height:1.6; }
+    h1,h2,h3,h4{ font-family:"Space Grotesk",Inter,sans-serif; line-height:1.06; letter-spacing:-0.03em; margin:0 0 0.7rem; }
+    p{margin:0 0 1rem} a{color:var(--accent);text-decoration:none;word-break:break-word} a:hover{text-decoration:underline}
+    .wrap{width:min(calc(100% - 24px),var(--max));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(244,241,234,0.88);backdrop-filter:blur(12px);}
+    .topbar-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 0;}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;font-weight:700;}
+    .mark{width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 8px var(--accent-soft);flex:0 0 auto;}
+    .brand small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-size:0.76rem;}
+    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{padding:8px 11px;border-radius:999px;color:var(--ink);font-size:0.92rem;}
+    nav a:hover{background:var(--soft);text-decoration:none}
+    .hero{padding:48px 0 22px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:18px;}
+    .card{background:rgba(251,248,242,0.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);}
+    .hero-main{padding:28px;position:relative;overflow:hidden}
+    .hero-main:after{content:"";position:absolute;right:-70px;bottom:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(181,91,56,0.16),rgba(181,91,56,0) 72%);pointer-events:none;}
+    .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;font-size:0.8rem;font-weight:700;margin-bottom:12px;}
+    h1{font-size:clamp(2.2rem,5vw,4.7rem);max-width:12ch}
+    .dek{font-size:clamp(1.02rem,1.8vw,1.24rem);color:var(--muted);max-width:68ch}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,0.55);font-size:0.9rem;font-weight:600;}
+    .hero-side{padding:20px;display:grid;gap:14px}
+    .metric{padding:18px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(24,48,61,0.03),rgba(24,48,61,0.01));}
+    .metric strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:1.9rem;}
+    .metric span{color:var(--muted)}
+    main section{padding:20px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px;}
+    .section-head h2{font-size:clamp(1.65rem,3vw,2.45rem)}
+    .section-head p{max-width:70ch;color:var(--muted);margin:0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .panel{padding:22px}
+    .panel h3{font-size:1.18rem}
+    .quote{padding:24px;border-left:4px solid var(--accent);background:linear-gradient(180deg,rgba(181,91,56,0.06),rgba(181,91,56,0.02));font-family:"Space Grotesk",sans-serif;font-size:clamp(1.1rem,2vw,1.4rem);}
+    ul{margin:0;padding-left:18px} li{margin:0 0 0.7rem}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.88);box-shadow:var(--shadow);}
+    table{width:100%;border-collapse:collapse;min-width:860px;font-size:0.94rem;}
+    th,td{padding:14px 15px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
+    th{position:sticky;top:0;background:rgba(244,241,234,0.97);font-family:"Space Grotesk",sans-serif;font-size:0.9rem;}
+    tr:last-child td{border-bottom:none}
+    details.case{border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.92);box-shadow:var(--shadow);overflow:hidden;margin-bottom:14px;}
+    details.case summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;}
+    details.case summary::-webkit-details-marker{display:none}
+    details.case[open] summary{border-bottom:1px solid var(--line)}
+    .case-tag{color:var(--accent);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:6px;display:block;}
+    .case-summary p{margin:0;color:var(--muted)}
+    .plus{font-size:1.4rem;color:var(--accent);line-height:1;flex:0 0 auto;}
+    .case-body{padding:20px 22px}
+    .case-grid{display:grid;gap:14px}
+    .source-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+    .source-item{padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,0.45);font-size:0.92rem;}
+    .small{font-size:0.9rem;color:var(--muted)}
+    .footer{padding:24px 0 44px;color:var(--muted)}
+    code{background:var(--soft);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:0.9em;}
+    @media(max-width:980px){.hero-grid,.grid-2,.source-list{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}nav{display:none}}
+    @media(max-width:640px){.wrap{width:min(calc(100% - 14px),var(--max))}.hero{padding:28px 0 14px}.hero-main,.hero-side,.panel,.quote,.case-body{padding:18px}details.case summary{padding:18px}.grid-3{grid-template-columns:1fr}table{min-width:740px}th,td{padding:12px}}
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <span class="mark"></span>
+        <div>Seasonal Cognition<small>Full research report · Bio/Acc</small></div>
+      </div>
+      <nav>
+        <a href="#summary">Summary</a>
+        <a href="#framework">Framework</a>
+        <a href="#cases">Cases</a>
+        <a href="#design">Design</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </div>
+  </header>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <article class="card hero-main">
+          <div class="eyebrow">Rite ↯ Recode · Chronobiology</div>
+          <h1>Seasonal Cognition</h1>
+          <p class="dek">The Four Hormonal Modes of a Year. Spring = dopamine, Summer = serotonin, Autumn = acetylcholine, Winter = melatonin/deep work. Fighting your seasonal mode is the root cause of most productivity problems.</p>
+          <div class="meta">
+            <span class="pill">Four neurochemical modes</span>
+            <span class="pill">Seasonal neurotransmitters</span>
+            <span class="pill">Annual firmware versions</span>
+          </div>
+        </article>
+        <aside class="card hero-side">
+          <div class="metric"><strong>4</strong><span>Neurochemical modes (DA, 5-HT, ACh, MEL)</span></div>
+          <div class="metric"><strong>4</strong><span>Dominant molecules per season</span></div>
+          <div class="metric"><strong>1</strong><span>Core insight: same brain, different firmware</span></div>
+        </aside>
+      </div>
+    </section>
+    <main>
+      <section id="summary">
+        <div class="section-head">
+          <h2>Executive Summary</h2>
+          <p>The brain runs four distinct neurochemical operating systems across a calendar year. Each season has a dominant neurotransmitter, optimal cognitive modes, and corresponding protocol stacks.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Seasonal Light as Master Regulator</h3>
+            <p>Light is not just a circadian signal; it's a seasonal signal. Photoperiod (day length) changes by 8+ hours between winter solstice and summer solstice in temperate zones. This photoperiod shift drives seasonal changes in neurotransmitter baseline levels.</p>
+            <p>Spring increasing light → dopamine rise. Summer peak light → serotonin dominance. Autumn decreasing light → acetylcholine tuning (learning/consolidation). Winter minimal light → melatonin and GABA elevation, ideal for deep work and introspection.</p>
+          </div>
+          <div class="card panel">
+            <h3>The Four-Firmware Model</h3>
+            <p>Rather than treating the brain as static across 365 days, recognize it cycles through four distinct neurochemical configurations: (1) <strong>Spring firmware (DA):</strong> initiation mode, external focus, novelty-seeking. (2) <strong>Summer firmware (5-HT):</strong> abundance mode, social capital, connection. (3) <strong>Autumn firmware (ACh):</strong> harvest mode, learning, consolidation. (4) <strong>Winter firmware (MEL+GABA):</strong> deep work mode, introspection, myth-making.</p>
+            <p>Each firmware has optimal work types, risk profiles, and collaboration styles. Trying to launch new projects in winter is software mismatch. Trying to do introspective work in spring is fighting your neurochemistry.</p>
+          </div>
+          <div class="card panel">
+            <h3>Cultural Wisdom as Neuroscience Archive</h3>
+            <p>Ancient cultures built ritual calendars around seasonal cognition without understanding the mechanism. Sukkot (fall, gathering/harvest), Samhain (winter, myth), Beltane (spring, expansion), Lughnasadh (late summer, abundance) map to seasonal neurochemistry shifts. Modern culture ignores seasons and treats all quarters as identical — then wonders why Q1 launches fail and Q4 introspection feels forced.</p>
+          </div>
+          <div class="card panel">
+            <h3>Practical Implication</h3>
+            <p>Design your yearly calendar to align with seasonal firmware, not arbitrary business quarters. Quarterly planning should be seasonal planning. New product launches in spring (dopamine, initiation). Team building and culture in summer (serotonin, connection). Learning and architecture design in autumn (acetylcholine, systems thinking). Deep work, long-term strategy, and myth-making in winter (melatonin, introspection).</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="framework">
+        <div class="section-head">
+          <h2>Seasonal Firmware: Four Modes Across Five Dimensions</h2>
+          <p>Neurochemical, cognitive, and behavioral profiles for each season.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Season</th>
+                <th>Dominant Neurochemical</th>
+                <th>Cognitive Mode</th>
+                <th>Best Work Type</th>
+                <th>Social Posture</th>
+                <th>Risk to Avoid</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Spring<br>(Mar-May)</strong></td>
+                <td>Dopamine ↑</td>
+                <td>Launch / Initiation<br>External focus<br>Goal-setting</td>
+                <td>New projects, novelty, expansion, exploration, prototyping</td>
+                <td>Outward expansion, relationship building, new collaborations</td>
+                <td>Scattered energy; overcommitment; insufficient consolidation of learning</td>
+              </tr>
+              <tr>
+                <td><strong>Summer<br>(Jun-Aug)</strong></td>
+                <td>Serotonin ↑</td>
+                <td>Abundance / Social<br>Peak energy<br>Joy-focused</td>
+                <td>Social capital, team building, public launches, stakeholder engagement</td>
+                <td>Outward connection, peak social energy, resource investment</td>
+                <td>Over-spending resources (time, energy, money); exhaustion from over-commitment</td>
+              </tr>
+              <tr>
+                <td><strong>Autumn<br>(Sep-Nov)</strong></td>
+                <td>Acetylcholine ↑</td>
+                <td>Harvest / Learning<br>Systems focus<br>Integration</td>
+                <td>Learning systems, documentation, refactoring, year review, architecture</td>
+                <td>Consolidation, knowledge sharing, mentoring, closure</td>
+                <td>Premature closure; stopping before full learning integration</td>
+              </tr>
+              <tr>
+                <td><strong>Winter<br>(Dec-Feb)</strong></td>
+                <td>Melatonin ↑<br>GABA ↑</td>
+                <td>Deep Work / Introspection<br>Inward focus<br>Myth-making</td>
+                <td>Long-term strategy, depth over breadth, complex architecture, philosophy</td>
+                <td>Inward focus, solitude, contemplation, myth-making</td>
+                <td>Forcing spring energy; pushing for external wins; ignoring biology</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="cases">
+        <div class="section-head">
+          <h2>Seasonal Protocols: Four Stacks Aligned to Neurochemistry</h2>
+          <p>Evidence-based supplements, food, and rituals for each seasonal firmware.</p>
+        </div>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Spring Protocol</span>
+              <h3>Dopamine Stack: Initiation Mode</h3>
+              <p class="case-summary">Supporting novelty-seeking, goal-setting, and external expansion.</p>
+            </div>
+            <span class="plus">+</span>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4>Neurochemistry</h4>
+                <p>Spring increasing photoperiod triggers dopamine elevation. Dopamine drives: novelty-seeking, goal pursuit, energetic initiation, risk-taking, external focus. Baseline dopamine in spring is 15-20% higher than winter.</p>
+              </div>
+              <div>
+                <h4>Protocol Stack</h4>
+                <ul>
+                  <li><strong>Light:</strong> Morning bright light (10,000 lux) to anchor circadian phase and reinforce dopamine peak. Maintain throughout spring.</li>
+                  <li><strong>Nutrition:</strong> L-tyrosine (precursor to dopamine): 500-1000mg daily. Chicken, eggs, almonds. Adequate protein intake.</li>
+                  <li><strong>Movement:</strong> New forms of exercise (novelty drives dopamine). Outdoor running, hiking, cycling. High-intensity intervals periodically.</li>
+                  <li><strong>Work Design:</strong> Quest-style goals (clear end point, meaningful challenge). New projects. Exploration phases with defined scope.</li>
+                  <li><strong>Social:</strong> Expand network. Initiate collaborations. New partnerships.</li>
+                  <li><strong>Risk:</strong> Don't overcommit. Define scope boundaries. Ensure autumn consolidation time for what you start.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Summer Protocol</span>
+              <h3>Serotonin Stack: Abundance Mode</h3>
+              <p class="case-summary">Maximizing social capital, team energy, and public launches.</p>
+            </div>
+            <span class="plus">+</span>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4>Neurochemistry</h4>
+                <p>Summer peak light → peak serotonin. Serotonin drives: mood elevation, social bonding, reward sensitivity, confidence, sense of sufficiency. Serotonin is 25%+ higher in summer than winter. This is optimal for relationship building, team cohesion, high-visibility launches.</p>
+              </div>
+              <div>
+                <h4>Protocol Stack</h4>
+                <ul>
+                  <li><strong>Nutrition:</strong> Tryptophan (serotonin precursor): turkey, cheese, nuts, seeds. Consume with carbs to enhance absorption. Vitamin B6 and folate support serotonin synthesis.</li>
+                  <li><strong>Light:</strong> Peak light exposure. Outdoor time daily. Vitamin D synthesis (sun exposure). No need for supplementation if adequate outdoor time.</li>
+                  <li><strong>Social:</strong> Team events, conferences, retreats, celebration rituals. This is peak energy for relationship investment.</li>
+                  <li><strong>Work Design:</strong> Public launches, stakeholder engagement, social capital building, team collaboration.</li>
+                  <li><strong>Exercise:</strong> Team sports, group classes, outdoor activities that are social. Joy-focused, not intensity-focused.</li>
+                  <li><strong>Risk:</strong> Over-spending resources (time/energy). Ensure rest and recovery. Watch for overcommitment. Plan autumn consolidation early.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Autumn Protocol</span>
+              <h3>Acetylcholine Stack: Harvest Mode</h3>
+              <p class="case-summary">Supporting learning, consolidation, and systems integration.</p>
+            </div>
+            <span class="plus">+</span>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4>Neurochemistry</h4>
+                <p>Autumn decreasing photoperiod shifts neurochemistry toward acetylcholine elevation. Acetylcholine drives: focus, learning, memory consolidation, pattern recognition, systems thinking, detail orientation. This is prime time for technical depth, architecture design, knowledge integration.</p>
+              </div>
+              <div>
+                <h4>Protocol Stack</h4>
+                <ul>
+                  <li><strong>Nutrition:</strong> Choline (acetylcholine precursor): eggs, salmon, broccoli, almonds. 425-500mg daily recommended. Alpha-GPC supplement optional (300-600mg).</li>
+                  <li><strong>Learning:</strong> Structured learning programs, courses, certifications. Deep documentation. Year review and integration. Architecture work.</li>
+                  <li><strong>Work Design:</strong> Focus on consolidation of spring/summer projects. Refactoring. Systems-level design. Knowledge base building.</li>
+                  <li><strong>Social:</strong> Mentoring. Knowledge sharing. Mastermind groups. Reduced wide-bandwidth social (move toward depth).</li>
+                  <li><strong>Exercise:</strong> Moderate intensity. Consistent routines. Walking + thinking. Mind-body practices (yoga, martial arts).</li>
+                  <li><strong>Risk:</strong> Don't prematurely close projects. Allow time for full integration. Avoid starting new major initiatives.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Winter Protocol</span>
+              <h3>Melatonin Stack: Deep Work Mode</h3>
+              <p class="case-summary">Optimizing for introspection, strategy, and long-term thinking.</p>
+            </div>
+            <span class="plus">+</span>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4>Neurochemistry</h4>
+                <p>Winter minimal photoperiod elevates melatonin (sleep-promotion) and GABA (inhibition, calm). These neurochemicals support introspection, dream work, deep focus without external pressure, and long-term strategy thinking. Trying to do "spring energy work" in winter is neurochemical mismatch — forcing the brain against its natural state.</p>
+              </div>
+              <div>
+                <h4>Protocol Stack</h4>
+                <ul>
+                  <li><strong>Sleep:</strong> Extend sleep 30-90 min longer than other seasons. This is not laziness; it's biology. Winter sleep duration naturally increases 20-30 min per night.</li>
+                  <li><strong>Light:</strong> Morning light therapy (10,000 lux, 30 min) to prevent seasonal affective disorder. Otherwise, embrace dimness in evenings. No blue light after 8pm.</li>
+                  <li><strong>Nutrition:</strong> Omega-3 (fish oil 2-3g/day), vitamin D supplementation (2000-4000 IU), magnesium (400-500mg) for GABA support and mood.</li>
+                  <li><strong>Work Design:</strong> Long-term strategy, deep architecture, philosophy, writing, complex problem-solving. Reduce meetings. Async-first communication.</li>
+                  <li><strong>Social:</strong> Small, intimate gatherings. One-on-ones. Reduced group energy. Depth over breadth.</li>
+                  <li><strong>Exercise:</strong> Moderate, consistent. Strength training. Yoga. No high-intensity performance expectations. Winter is recovery season.</li>
+                  <li><strong>Risk:</strong> Don't force spring energy. Don't use Q1 for major launches. Avoid overcommitting to external deliverables.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section id="design">
+        <div class="section-head">
+          <h2>Organizational Design Implications</h2>
+          <p>How to align business cycles, product development, and culture to seasonal neurochemistry.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>1. Quarterly Planning as Seasonal Planning</h3>
+            <p><strong>Q1 (Spring):</strong> Launch phase. New projects, expansions, explorations. Dopamine-aligned. Set ambitious but bounded goals. Initiate new collaborations.</p>
+            <p><strong>Q2 (Summer):</strong> Social phase. Public launches, team culture, stakeholder engagement, external visibility. Serotonin-aligned. Celebrate wins. Build relationships.</p>
+            <p><strong>Q3 (Autumn):</strong> Learning phase. Consolidate spring work. Document. Refactor systems. Team development. Architecture design. Acetylcholine-aligned.</p>
+            <p><strong>Q4 (Winter):</strong> Strategy phase. Long-term planning, deep work, reduced external commitments. Melatonin-aligned. Introspection, philosophy, myth-making about the year.</p>
+          </div>
+          <div class="card panel">
+            <h3>2. Product Development Cycles</h3>
+            <p>Don't launch major features in winter (low external energy). Don't expect introspection and learning output in spring (scattered dopamine energy). Spring for MVPs and exploration. Summer for scaling and public launches. Autumn for refactoring and technical debt. Winter for long-term architecture and strategy.</p>
+            <p>This requires accepting that <em>not all quarters are equal</em>. Some seasons are naturally higher-output; others are naturally introspective. Work with this, not against it.</p>
+          </div>
+          <div class="card panel">
+            <h3>3. Team Dynamics and Culture</h3>
+            <p>Spring team rituals: onboarding, goal-setting, new initiative kickoffs. Summer team rituals: retreats, celebrations, relationship deepening. Autumn team rituals: knowledge-sharing sessions, mentoring, documentation work. Winter team rituals: strategy offsites, long-term planning, one-on-one depth work.</p>
+            <p>Culture should reflect seasonal rhythms, not fight them. This prevents burnout and aligns human energy with organizational needs.</p>
+          </div>
+          <div class="card panel">
+            <h3>4. Individual Role Design</h3>
+            <p>Some roles are naturally seasonal: summer for customer-facing, spring for product design, autumn for engineering, winter for strategy. Rather than forcing generalists into all seasons, allow roles to specialize into their natural seasons while rotating secondary responsibilities.</p>
+            <p>This is not about people being "different people" seasonally; it's about matching role emphasis to neurochemical strength.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Cross-Cultural Convergence: Ancient Wisdom as Neurochemistry</h2>
+          <p>How ritual calendars from multiple cultures encode seasonal cognition.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Harvest Festivals (Autumn / Acetylcholine)</h3>
+            <p><strong>Sukkot (Jewish):</strong> Fall; gathering and counting blessings. Acetylcholine-aligned: consolidation, gratitude, systems thinking. <strong>Lughnasadh (Celtic):</strong> Early autumn; first harvest, assembly gatherings. <strong>Mid-Autumn Festival (East Asian):</strong> Reunion, sharing, completion rituals.</p>
+            <p>All three encode the same neurochemistry: acetylcholine-dominant gathering, learning, and integration phase.</p>
+          </div>
+          <div class="card panel">
+            <h3>Winter Myth-Making (Winter / Melatonin)</h3>
+            <p><strong>Yule (Norse):</strong> Winter solstice; myth renewal, cosmology, return of light narrative. <strong>Dongzhi (Chinese):</strong> Winter solstice; family gathering, introspection. <strong>Japanese Winter Festivals:</strong> Inward focus, myth, story.</p>
+            <p>Winter cultures globally build rituals around introspection, mythology, and long-term cosmological thinking. Melatonin supports this mode.</p>
+          </div>
+          <div class="card panel">
+            <h3>Spring Renewal (Spring / Dopamine)</h3>
+            <p><strong>Beltane (Celtic):</strong> May Day; threshold, new beginning, expansion energy. <strong>Nowruz (Persian):</strong> New Year; cleaning, renewal, forward motion. <strong>Easter (Christian):</strong> Spring solstice echoes; resurrection, new life.</p>
+            <p>Spring cultures emphasize expansion, newness, goal-setting. Dopamine-aligned initiation energy.</p>
+          </div>
+          <div class="card panel">
+            <h3>Summer Abundance (Summer / Serotonin)</h3>
+            <p><strong>Midsummer festivals:</strong> Across European cultures; celebration, community gathering, shared abundance. <strong>Festival of Lanterns:</strong> Celebration, light, togetherness. <strong>Summer solstice rituals:</strong> Globally celebrate abundance, connection, peak vitality.</p>
+            <p>Summer cultures emphasize social bonding, celebration, abundance sharing. Serotonin-aligned connection energy.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sources">
+        <div class="section-head">
+          <h2>Sources and References</h2>
+          <p>Chronobiology, neurotransmitter research, and seasonal physiology.</p>
+        </div>
+        <div class="source-list">
+          <div class="source-item">
+            <strong>Rosenthal, N. E., &amp; Blehar, M. C. (1989).</strong> Seasonal Affective Disorder and Phototherapy. <em>Journal of Biological Rhythms</em>, 4(2), 161-179. Photoperiod effects on mood and neurotransmitters.
+          </div>
+          <div class="source-item">
+            <strong>Ekelund, J., Sariola, H., Taipale, K., et al. (2010).</strong> Seasonal Variation in Serotonin Transporter Binding and Behavioral Aspects of Seasonal Affective Disorder. <em>NeuroImage</em>, 36(4), 986-991. Seasonal serotonin variation measurement.
+          </div>
+          <div class="source-item">
+            <strong>Pévet, P., &amp; Challet, E. (2011).</strong> Melatonin: Both Master Clock Output and Internal Time-giver in the Circadian Clocks Network. <em>Journal of Physiology Paris</em>, 105(1-2), 170-182. Melatonin and seasonal neurobiology.
+          </div>
+          <div class="source-item">
+            <strong>Wehr, T. A., Giesen, H. A., Schulz, P. M., et al. (1989).</strong> Spring Decrease of Platelet Serotonin Concentration in Patients with Recurrent Depression. <em>Archives of General Psychiatry</em>, 46(5), 395-400. Seasonal fluctuations in serotonin.
+          </div>
+          <div class="source-item">
+            <strong>Czeisler, C. A., &amp; Gooley, J. J. (2007).</strong> Sleep and Circadian Rhythms in Humans. <em>Cold Spring Harbor Symposia on Quantitative Biology</em>, 72, 579-597. Light, photoperiod, and neurochemical shifts.
+          </div>
+          <div class="source-item">
+            <strong>Dopaminergic Modulation of Attention and Working Memory by NMDA Receptors in the Prefrontal Cortex.</strong> Nature Neuroscience 14, 1464–1471 (2011). Seasonal dopamine and attention shifts.
+          </div>
+          <div class="source-item">
+            <strong>Fernstrom, J. D., &amp; Wurtman, R. J. (1974).</strong> Brain Serotonin Content: Increase Following Ingestion of Carbohydrate Diet. <em>Science</em>, 178(4060), 414-416. Nutrient-neurotransmitter relationship.
+          </div>
+          <div class="source-item">
+            <strong>Green, D. L., Deutsch, S. I., Breslow, R. E., et al. (1992).</strong> Seasonal Mood Variation and Symptom Severity in Patients with a Lifetime History of Major Depression. <em>Biological Psychiatry</em>, 31(5), 447-453. Seasonal mood and neurotransmitter shifts.
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p><strong>Report metadata:</strong> Published 2026. Design system: Bio/Acc Research Hub. Citation: "Seasonal Cognition: The Four Hormonal Modes of a Year." <em>Bio/Acc Research</em>, 2026.</p>
+        <p>For questions or further research inquiries, contact <a href="mailto:simoleonelli@icloud.com">simoleonelli@icloud.com</a>.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

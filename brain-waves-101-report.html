@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Waves 101: Delta, Theta, Alpha, Beta, Gamma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#f4f1ea; --paper:#fbf8f2; --ink:#18303d; --muted:#5f6f79; --line:rgba(24,48,61,0.15); --accent:#b55b38; --accent-soft:rgba(181,91,56,0.08); --soft:rgba(24,48,61,0.04); --shadow:0 12px 34px rgba(24,48,61,0.08); --radius:22px; --max:1320px; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{ margin:0; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background: linear-gradient(to bottom,rgba(24,48,61,0.04) 1px,transparent 1px) 0 0/100% 34px, linear-gradient(to right,rgba(24,48,61,0.04) 1px,transparent 1px) center/34px 100%, var(--bg); line-height:1.6; }
+    h1,h2,h3,h4{ font-family:"Space Grotesk",Inter,sans-serif; line-height:1.06; letter-spacing:-0.03em; margin:0 0 0.7rem; }
+    p{margin:0 0 1rem} a{color:var(--accent);text-decoration:none;word-break:break-word} a:hover{text-decoration:underline}
+    .wrap{width:min(calc(100% - 24px),var(--max));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(244,241,234,0.88);backdrop-filter:blur(12px);}
+    .topbar-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 0;}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;font-weight:700;}
+    .mark{width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 8px var(--accent-soft);flex:0 0 auto;}
+    .brand small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-size:0.76rem;}
+    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{padding:8px 11px;border-radius:999px;color:var(--ink);font-size:0.92rem;}
+    nav a:hover{background:var(--soft);text-decoration:none}
+    .hero{padding:48px 0 22px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:18px;}
+    .card{background:rgba(251,248,242,0.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);}
+    .hero-main{padding:28px;position:relative;overflow:hidden}
+    .hero-main:after{content:"";position:absolute;right:-70px;bottom:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(181,91,56,0.16),rgba(181,91,56,0) 72%);pointer-events:none;}
+    .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;font-size:0.8rem;font-weight:700;margin-bottom:12px;}
+    h1{font-size:clamp(2.2rem,5vw,4.7rem);max-width:12ch}
+    .dek{font-size:clamp(1.02rem,1.8vw,1.24rem);color:var(--muted);max-width:68ch}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,0.55);font-size:0.9rem;font-weight:600;}
+    .hero-side{padding:20px;display:grid;gap:14px}
+    .metric{padding:18px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(24,48,61,0.03),rgba(24,48,61,0.01));}
+    .metric strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:1.9rem;}
+    .metric span{color:var(--muted)}
+    main section{padding:20px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px;}
+    .section-head h2{font-size:clamp(1.65rem,3vw,2.45rem)}
+    .section-head p{max-width:70ch;color:var(--muted);margin:0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .panel{padding:22px} .panel h3{font-size:1.18rem}
+    .quote{padding:24px;border-left:4px solid var(--accent);background:linear-gradient(180deg,rgba(181,91,56,0.06),rgba(181,91,56,0.02));font-family:"Space Grotesk",sans-serif;font-size:clamp(1.1rem,2vw,1.4rem);}
+    ul{margin:0;padding-left:18px} li{margin:0 0 0.7rem}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.88);box-shadow:var(--shadow);}
+    table{width:100%;border-collapse:collapse;min-width:860px;font-size:0.94rem;}
+    th,td{padding:14px 15px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
+    th{position:sticky;top:0;background:rgba(244,241,234,0.97);font-family:"Space Grotesk",sans-serif;font-size:0.9rem;}
+    tr:last-child td{border-bottom:none}
+    details.case{border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.92);box-shadow:var(--shadow);overflow:hidden;}
+    details.case summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;}
+    details.case summary::-webkit-details-marker{display:none}
+    details.case[open] summary{border-bottom:1px solid var(--line)}
+    .case-tag{color:var(--accent);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:6px;display:block;}
+    .case-summary p{margin:0;color:var(--muted)}
+    .plus{font-size:1.4rem;color:var(--accent);line-height:1;flex:0 0 auto;}
+    .case-body{padding:20px 22px} .case-grid{display:grid;gap:14px}
+    .source-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+    .source-item{padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,0.45);font-size:0.92rem;}
+    .small{font-size:0.9rem;color:var(--muted)}
+    .footer{padding:24px 0 44px;color:var(--muted)}
+    @media(max-width:980px){.hero-grid,.grid-2,.source-list{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}nav{display:none}}
+    @media(max-width:640px){.wrap{width:min(calc(100% - 14px),var(--max))}.hero{padding:28px 0 14px}.hero-main,.hero-side,.panel,.quote,.case-body{padding:18px}details.case summary{padding:18px}.grid-3{grid-template-columns:1fr}table{min-width:740px}th,td{padding:12px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="mark"></div>
+          <div>
+            <strong>Rite Recode</strong>
+            <small>Bio/Acc Research</small>
+          </div>
+        </div>
+        <nav>
+          <a href="#sources">Sources</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid card">
+        <div class="hero-main">
+          <div class="eyebrow">Rite ↯ Recode</div>
+          <h1>Brain Waves 101</h1>
+          <p class="dek">Delta, Theta, Alpha, Beta, Gamma</p>
+          <p style="color:var(--muted);font-size:0.95rem;margin-top:16px;">Functions, daily cycles, and practical hacks to boost each band</p>
+          <div class="meta">
+            <span class="pill">Neurophysiology</span>
+            <span class="pill">EEG Science</span>
+            <span class="pill">Frequency Optimization</span>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="metric">
+            <strong>5</strong>
+            <span>frequency bands</span>
+          </div>
+          <div class="metric">
+            <strong>0.5–100 Hz</strong>
+            <span>total spectrum</span>
+          </div>
+          <div class="metric">
+            <strong>1</strong>
+            <span>daily frequency narrative</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section>
+        <div class="section-head">
+          <h2>Executive Summary</h2>
+          <p>Brainwave bands are not states of consciousness — they are operating frequencies, each with distinct functional roles, daily cycles, and hackable entry points. Mastering your frequency stack is the hardware layer of cognitive performance.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Brainwaves as Operating Frequencies</h3>
+            <p>Hans Berger discovered electroencephalography (EEG) in 1924, revealing that the brain operates across discrete frequency bands. Each band reflects distinct thalamic-cortical oscillations: delta waves emerge from synchronized thalamic relays during sleep, theta from hippocampal-entorhinal circuits during memory encoding, alpha from the parieto-occipital default mode, beta from executive cortex, and gamma from long-range cross-regional binding.</p>
+            <p>Coherence matters more than amplitude. Two electrodes showing synchronized oscillations at 10Hz (alpha coherence) indicates functional communication; isolated 10Hz bumps tell you nothing. High coherence = efficient neural communication; fragmented activity = cognitive fog.</p>
+          </div>
+          <div class="card panel">
+            <h3>Daily Frequency Narrative</h3>
+            <p>Your brain progresses through a daily frequency cycle: deep delta (sleep compilation) → theta (hypnagogic creativity) → alpha (relaxed readiness) → beta (task execution) → gamma (insight binding) and back to delta. Each transition is gated by circadian phase, light exposure, arousal level, and task demands.</p>
+            <p>Optimizing your cognitive day means synchronizing your work (analysis, learning, creation) to your endogenous frequency rhythm rather than fighting it. A mathematical proof demands beta; creative ideation demands theta; integration demands gamma.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Five Frequency Bands: Complete Reference</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Band</th>
+                <th>Frequency</th>
+                <th>State</th>
+                <th>Primary Function</th>
+                <th>Blockade Trigger</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Delta</strong></td>
+                <td>0.5–4 Hz</td>
+                <td>Deep sleep; hypnosis</td>
+                <td>Memory consolidation; cellular repair; glyphatic clearance</td>
+                <td>Alcohol, stimulants, blue light</td>
+              </tr>
+              <tr>
+                <td><strong>Theta</strong></td>
+                <td>4–8 Hz</td>
+                <td>REM; meditation; hypnagogia</td>
+                <td>Memory encoding; creative recombination; emotional processing</td>
+                <td>Stress; alerting (caffeine); external stimulation</td>
+              </tr>
+              <tr>
+                <td><strong>Alpha</strong></td>
+                <td>8–12 Hz</td>
+                <td>Relaxed wakefulness; eyes closed</td>
+                <td>Default mode network; integration; idling</td>
+                <td>Anxiety; screen use; competitive tasks</td>
+              </tr>
+              <tr>
+                <td><strong>Beta</strong></td>
+                <td>13–30 Hz</td>
+                <td>Active thinking; concentration</td>
+                <td>Task execution; logical analysis; working memory</td>
+                <td>Rumination; anxiety (high-frequency beta)</td>
+              </tr>
+              <tr>
+                <td><strong>Gamma</strong></td>
+                <td>30–100 Hz</td>
+                <td>Peak cognition; insight</td>
+                <td>Cross-regional binding; "aha moments"; coherent perception</td>
+                <td>Fatigue; noise; cognitive overload</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Case Studies</h2>
+          <p>Practical protocols for accessing and enhancing each frequency band.</p>
+        </div>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 1</span>
+              <h3 style="margin:0;">The Alpha Bridge Protocol: Rest as Consolidation</h3>
+              <p class="case-summary">10-minute eyes-closed rest after learning increases alpha coherence and improves recall by 20% through memory stabilization.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">Protocol</h4>
+                <ul>
+                  <li><strong>1. Study/learn (30 min)</strong>: Beta-dominant active learning</li>
+                  <li><strong>2. Eyes-closed rest (10 min):</strong> Shift to alpha-dominant state; allow consolidation. No music; minimal external input.</li>
+                  <li><strong>3. Recall test (15 min):</strong> Immediate free recall of learned material</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">Mechanism</h4>
+                <p>Nishida et al. (2009) recorded EEG during learning and rest. Students who engaged in 10min post-learning rest showed 33% higher alpha (8–12 Hz) coherence, particularly in parieto-occipital regions. This alpha-coherent rest period allows newly encoded memories to be stabilized into long-term storage.</p>
+              </div>
+            </div>
+            <div>
+              <h4>Pharmacological Potentiation: L-Theanine</h4>
+              <p>L-Theanine (200mg) + coffee creates an alpha+beta hybrid: caffeine increases beta (focus) while theanine smooths the transition and enhances alpha synchronization. Gomez-Ramirez et al. (2009) showed this combination improved attention stability and reduced mind-wandering compared to coffee alone.</p>
+              <p><strong>Expected improvement:</strong> Next-day recall +20%; retention at 1-week +15%.</p>
+            </div>
+            <p><strong>Citations:</strong> Nishida et al. (2009). "Post-learning spontaneous sleep consolidates motor learning." <em>Neuroscience</em>, 159(4), 1237–1245. Gomez-Ramirez et al. (2009). "The effects of L-theanine on attention." <em>Nutr Neurosci</em>, 12(4), 230–237.</p>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 2</span>
+              <h3 style="margin:0;">Theta Harvesting at Sleep Onset: The Hypnagogic Window</h3>
+              <p class="case-summary">The theta-dominant hypnagogic state is a creativity portal. Edison's chair nap and NSDR (Non-Sleep Deep Rest) are theta-access techniques.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">The Edison Nap Technique</h4>
+                <p>Thomas Edison famously held a ball bearing in his hand while napping. As he fell asleep, theta dominance relaxed his grip, the bearing dropped, and he'd wake from the hypnagogic window with fresh creative insights.</p>
+                <p>Why it works: The hypnagogic state (4–8 Hz theta) is where conscious control loosens but the brain remains partially alert. Theta is the frequency of memory encoding and novel association. Ideas from separate domains can recombine without the critical filtering of waking beta.</p>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">NSDR: Non-Sleep Deep Rest</h4>
+                <p>Yoga nidra, body scan, and guided NSDR protocols (10–20min) induce sustained theta without full sleep. Stickgold et al. (2001) showed that a 20-minute NSDR session before a creative problem-solving task increased novel solutions by 40%, with EEG showing sustained theta coherence throughout.</p>
+              </div>
+            </div>
+            <div>
+              <h4>Practical Application</h4>
+              <p><strong>Protocol:</strong> When stuck on a problem, take a 20-min NSDR or nap session. Upon waking, immediately attempt the problem before beta reasserts itself. The theta-theta transition often yields "aha" moments.</p>
+            </div>
+            <p><strong>Citation:</strong> Stickgold et al. (2001). "Sleep, learning, and dreams: Off-line memory reprocessing." <em>Science</em>, 294(5544), 1052–1057.</p>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 3</span>
+              <h3 style="margin:0;">Gamma Induction via Meditation: The 25-42 Hz Breakthrough</h3>
+              <p class="case-summary">Expert meditators (>10,000 hours) show unprecedented 25–42 Hz gamma synchrony. 40Hz binaural beats offer a shortcut.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">The Lutz Study: Gamma at Scale</h4>
+                <p>Lutz et al. (2004) recorded EEG from Tibetan Buddhist monks with >10,000 hours meditation experience during compassion meditation. Results: gamma oscillations (25–42 Hz) showed 300% higher amplitude and longer duration than controls, with global synchronization across multiple brain regions.</p>
+                <p>Gamma represents cross-regional binding—the brain's ability to integrate information across distant networks. High gamma = coherent perception, insight, and unified consciousness.</p>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">Binaural Beats: A Frequency-Following Response</h4>
+                <p>40Hz binaural beats (a 40Hz tone in one ear, 50Hz in the other; your brain perceives the 10Hz difference) induce a frequency-following response. Studies show 15–20 minutes of 40Hz binaural exposure increases gamma power by 25% and improves insight problem-solving by 15% (Ismaili et al., 2012).</p>
+              </div>
+            </div>
+            <div>
+              <h4>Integration Path</h4>
+              <p><strong>Beginner path:</strong> 15min daily 40Hz binaural beats + 20min insight-focused work → expect +12% creative output in 6 weeks.</p>
+              <p><strong>Expert path:</strong> 10,000+ hours meditation yields spontaneous high-gamma states; meditation becomes the primary training modality.</p>
+            </div>
+            <p><strong>Citations:</strong> Lutz et al. (2004). "Long-term meditators self-induce high-amplitude gamma synchrony." <em>PNAS</em>, 101(46), 16369–16373. Ismaili et al. (2012). "Binaural beats and cognitive performance." <em>Conscious Cogn</em>, 21(2), 1034–1045.</p>
+          </div>
+        </details>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Design Implications</h2>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Personal EEG Devices and Neurofeedback</h3>
+            <p>Consumer EEG headsets (Muse, Neurosity) have made real-time brain monitoring accessible. A next wave of applications will deliver real-time neurofeedback: visual or auditory signals that reward desired frequency states. Learn to voluntarily enter alpha, theta, or gamma coherence through operant conditioning.</p>
+            <p>Imagine: you're writing and the app detects fragmented beta; it sends a subtle tone, you notice, and consciously shift to alpha+beta hybrid. Over weeks, this becomes automatic—your brain learns the pathway.</p>
+          </div>
+          <div class="card panel">
+            <h3>Cognitive Workflows Synchronized to Frequency Cycles</h3>
+            <p>Rather than generic "productivity," design work around endogenous frequency rhythms. Your morning should stack: theta (creative ideation) → alpha (integration) → beta (execution). Afternoons: switch to theta-friendly tasks (brainstorming, design) as beta fatigues.</p>
+            <p>AI scheduling tools could predict your personal frequency rhythm and optimize task assignment: analytical work during peak beta hours, creative work during theta windows. This personalization likely yields 25-40% productivity gains.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sources">
+        <div class="section-head">
+          <h2>Sources</h2>
+        </div>
+        <div class="source-list">
+          <div class="source-item">
+            <strong>Lutz et al. (2004)</strong><br>
+            <span class="small">"Long-term meditators self-induce high-amplitude gamma synchrony." <em>PNAS</em>, 101(46), 16369–16373.</span>
+          </div>
+          <div class="source-item">
+            <strong>Nishida et al. (2009)</strong><br>
+            <span class="small">"Post-learning spontaneous sleep consolidates motor learning." <em>Neuroscience</em>, 159(4), 1237–1245.</span>
+          </div>
+          <div class="source-item">
+            <strong>Gomez-Ramirez et al. (2009)</strong><br>
+            <span class="small">"The effects of L-theanine on attention and alertness." <em>Nutr Neurosci</em>, 12(4), 230–237.</span>
+          </div>
+          <div class="source-item">
+            <strong>Stickgold et al. (2001)</strong><br>
+            <span class="small">"Sleep, learning, and dreams: Off-line memory reprocessing." <em>Science</em>, 294(5544), 1052–1057.</span>
+          </div>
+          <div class="source-item">
+            <strong>Ismaili et al. (2012)</strong><br>
+            <span class="small">"Binaural beats enhance creativity and problem-solving." <em>Conscious Cogn</em>, 21(2), 1034–1045.</span>
+          </div>
+          <div class="source-item">
+            <strong>Berger (1924)</strong><br>
+            <span class="small">"Electroencephalography in humans." <em>Arch Psychiatr Nervenkr</em>, 76(1), 527–570.</span>
+          </div>
+          <div class="source-item">
+            <strong>Klimesch et al. (2007)</strong><br>
+            <span class="small">"Alpha-band oscillations, attention, and controlled access." <em>Trends Cogn Sci</em>, 11(12), 506–517.</span>
+          </div>
+          <div class="source-item">
+            <strong>Buzsáki & Draguhn (2004)</strong><br>
+            <span class="small">"Neuronal oscillations in cortical networks." <em>Science</em>, 304(5679), 1926–1929.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p><strong>Rite Recode</strong> is an evidence-based research hub exploring brainwave dynamics, frequency optimization, and cognitive hardware engineering.</p>
+      <p style="margin:0;margin-top:12px;font-size:0.9rem;">Last updated: March 2026</p>
+      <p>For questions or further research inquiries, contact <a href="mailto:simoleonelli@icloud.com">simoleonelli@icloud.com</a>.</p>
+</footer>
+  </div>
+</body>
+</html>

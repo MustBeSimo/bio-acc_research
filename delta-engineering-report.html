@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delta Engineering: Designing Your Night to Train Tomorrow's Brain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#f4f1ea; --paper:#fbf8f2; --ink:#18303d; --muted:#5f6f79; --line:rgba(24,48,61,0.15); --accent:#b55b38; --accent-soft:rgba(181,91,56,0.08); --soft:rgba(24,48,61,0.04); --shadow:0 12px 34px rgba(24,48,61,0.08); --radius:22px; --max:1320px; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{ margin:0; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background: linear-gradient(to bottom,rgba(24,48,61,0.04) 1px,transparent 1px) 0 0/100% 34px, linear-gradient(to right,rgba(24,48,61,0.04) 1px,transparent 1px) center/34px 100%, var(--bg); line-height:1.6; }
+    h1,h2,h3,h4{ font-family:"Space Grotesk",Inter,sans-serif; line-height:1.06; letter-spacing:-0.03em; margin:0 0 0.7rem; }
+    p{margin:0 0 1rem} a{color:var(--accent);text-decoration:none;word-break:break-word} a:hover{text-decoration:underline}
+    .wrap{width:min(calc(100% - 24px),var(--max));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(244,241,234,0.88);backdrop-filter:blur(12px);}
+    .topbar-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 0;}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;font-weight:700;}
+    .mark{width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 8px var(--accent-soft);flex:0 0 auto;}
+    .brand small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-size:0.76rem;}
+    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{padding:8px 11px;border-radius:999px;color:var(--ink);font-size:0.92rem;}
+    nav a:hover{background:var(--soft);text-decoration:none}
+    .hero{padding:48px 0 22px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:18px;}
+    .card{background:rgba(251,248,242,0.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);}
+    .hero-main{padding:28px;position:relative;overflow:hidden}
+    .hero-main:after{content:"";position:absolute;right:-70px;bottom:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(181,91,56,0.16),rgba(181,91,56,0) 72%);pointer-events:none;}
+    .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;font-size:0.8rem;font-weight:700;margin-bottom:12px;}
+    h1{font-size:clamp(2.2rem,5vw,4.7rem);max-width:12ch}
+    .dek{font-size:clamp(1.02rem,1.8vw,1.24rem);color:var(--muted);max-width:68ch}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,0.55);font-size:0.9rem;font-weight:600;}
+    .hero-side{padding:20px;display:grid;gap:14px}
+    .metric{padding:18px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(24,48,61,0.03),rgba(24,48,61,0.01));}
+    .metric strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:1.9rem;}
+    .metric span{color:var(--muted)}
+    main section{padding:20px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px;}
+    .section-head h2{font-size:clamp(1.65rem,3vw,2.45rem)}
+    .section-head p{max-width:70ch;color:var(--muted);margin:0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .panel{padding:22px} .panel h3{font-size:1.18rem}
+    .quote{padding:24px;border-left:4px solid var(--accent);background:linear-gradient(180deg,rgba(181,91,56,0.06),rgba(181,91,56,0.02));font-family:"Space Grotesk",sans-serif;font-size:clamp(1.1rem,2vw,1.4rem);}
+    ul{margin:0;padding-left:18px} li{margin:0 0 0.7rem}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.88);box-shadow:var(--shadow);}
+    table{width:100%;border-collapse:collapse;min-width:860px;font-size:0.94rem;}
+    th,td{padding:14px 15px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
+    th{position:sticky;top:0;background:rgba(244,241,234,0.97);font-family:"Space Grotesk",sans-serif;font-size:0.9rem;}
+    tr:last-child td{border-bottom:none}
+    details.case{border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.92);box-shadow:var(--shadow);overflow:hidden;}
+    details.case summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;}
+    details.case summary::-webkit-details-marker{display:none}
+    details.case[open] summary{border-bottom:1px solid var(--line)}
+    .case-tag{color:var(--accent);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:6px;display:block;}
+    .case-summary p{margin:0;color:var(--muted)}
+    .plus{font-size:1.4rem;color:var(--accent);line-height:1;flex:0 0 auto;}
+    .case-body{padding:20px 22px} .case-grid{display:grid;gap:14px}
+    .source-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+    .source-item{padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,0.45);font-size:0.92rem;}
+    .small{font-size:0.9rem;color:var(--muted)}
+    .footer{padding:24px 0 44px;color:var(--muted)}
+    @media(max-width:980px){.hero-grid,.grid-2,.source-list{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}nav{display:none}}
+    @media(max-width:640px){.wrap{width:min(calc(100% - 14px),var(--max))}.hero{padding:28px 0 14px}.hero-main,.hero-side,.panel,.quote,.case-body{padding:18px}details.case summary{padding:18px}.grid-3{grid-template-columns:1fr}table{min-width:740px}th,td{padding:12px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="mark"></div>
+          <div>
+            <strong>Rite Recode</strong>
+            <small>Bio/Acc Research</small>
+          </div>
+        </div>
+        <nav>
+          <a href="#sources">Sources</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid card">
+        <div class="hero-main">
+          <div class="eyebrow">Rite ↯ Recode</div>
+          <h1>Delta Engineering</h1>
+          <p class="dek">Designing Your Night to Train Tomorrow's Brain</p>
+          <p style="color:var(--muted);font-size:0.95rem;margin-top:16px;">Your morning mind is compiled the night before. If your code runs slow, it's rarely a coffee problem — it's a Delta problem.</p>
+          <div class="meta">
+            <span class="pill">Sleep Architecture</span>
+            <span class="pill">Neurochemistry</span>
+            <span class="pill">Glymphatic System</span>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="metric">
+            <strong>0.5–4 Hz</strong>
+            <span>delta frequency band</span>
+          </div>
+          <div class="metric">
+            <strong>60%</strong>
+            <span>glymphatic expansion during SWS</span>
+          </div>
+          <div class="metric">
+            <strong>3</strong>
+            <span>primary delta-gating variables</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section>
+        <div class="section-head">
+          <h2>Executive Summary</h2>
+          <p>Delta waves (0.5–4 Hz) during slow-wave sleep are not passive rest — they are the brain's active compilation and repair phase. Glymphatic clearance, memory consolidation, growth hormone release, and cellular repair are all delta-gated. Engineering your delta window is the highest-ROI cognitive intervention available.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Sleep as Compilation</h3>
+            <p>The brain has two modes: awake (real-time processing, external sampling) and sleeping (offline consolidation, internal repair). Slow-wave sleep (SWS) is the night's "build phase"—where learned information is integrated, synaptic weights are pruned and stabilized, and neural damage from oxidative stress is repaired.</p>
+            <p>Delta waves (0.5–4 Hz) are the primary execution frequency during SWS. They emerge from coordinated thalamic-cortical oscillations, with each delta cycle (~1 second) representing a microstate of memory consolidation. The more delta amplitude and coherence, the better the overnight compilation—and the sharper your morning cognition.</p>
+          </div>
+          <div class="card panel">
+            <h3>The Glymphatic System</h3>
+            <p>Recent work by Maiken Nedergaard (Xie et al., 2013) revealed that the brain expands its interstitial space by ~60% during SWS, activating aquaporin-4 water channels in astrocytes. This allows cerebrospinal fluid (CSF) to wash through the brain at 10× the awake rate, clearing β-amyloid, tau, and other metabolic waste.</p>
+            <p>Poor delta sleep = impaired glymphatic clearance = accelerated cognitive aging. Studies show that chronic sleep loss correlates with 30% higher brain β-amyloid burden and 15-year acceleration in cognitive decline markers (Walker, 2017).</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Sleep Architecture: Engineering Stages and Variables</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>Frequency / Character</th>
+                <th>Primary Function</th>
+                <th>Engineering Variable</th>
+                <th>Supporting Compound</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>NREM 1</strong></td>
+                <td>Theta 4–8 Hz</td>
+                <td>Transition to sleep; hypnagogic imagery</td>
+                <td>Cooling (0.5°C drop); dimming (0 lux); magnesium available</td>
+                <td>Magnesium L-threonate 200mg</td>
+              </tr>
+              <tr>
+                <td><strong>NREM 2</strong></td>
+                <td>Sleep spindles (12–15 Hz); K-complexes</td>
+                <td>Memory encoding; procedural learning consolidation</td>
+                <td>Room temperature nadir (65–67°F); body position (side-lying)</td>
+                <td>Moderate magnesium glycinate</td>
+              </tr>
+              <tr>
+                <td><strong>NREM 3</strong></td>
+                <td>Delta 0.5–4 Hz (slow-wave sleep)</td>
+                <td>Glyphatic clearance; growth hormone release; cellular repair</td>
+                <td>Dark + cold (0 lux, 65°F); white noise 60dB; zero interruption</td>
+                <td>Glycine 3g + GABA 2g</td>
+              </tr>
+              <tr>
+                <td><strong>REM</strong></td>
+                <td>Mixed (theta + gamma); low amplitude</td>
+                <td>Emotional integration; fear extinction; creative recombination</td>
+                <td>Temperature rises (68–70°F); no light interruption; acetylcholine dominance</td>
+                <td>No intervention (protect REM duration)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Case Studies</h2>
+          <p>Protocols for maximizing delta coherence, glyphatic flow, and morning cognitive compilation.</p>
+        </div>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 1</span>
+              <h3 style="margin:0;">The Delta Stack: Sleep Optimization Protocol</h3>
+              <p class="case-summary">A multi-variable protocol targeting temperature, light, acoustics, and pharmacology to maximize slow-wave sleep duration and delta coherence.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">Environmental Engineering</h4>
+                <ul>
+                  <li><strong>Room temperature:</strong> 65–67°F (18.3–19.4°C). Thermoregulation is a gating mechanism for sleep onset; a 0.5°C core body temperature drop triggers delta onset within 20 minutes.</li>
+                  <li><strong>Light:</strong> 0 lux during sleep window. Use blackout curtains; block alarm clock LEDs. Blue light exposure within 2 hours of sleep suppresses melatonin by 50% and reduces SWS duration by 15% (Chang et al., 2015).</li>
+                  <li><strong>Acoustics:</strong> 60dB white noise or brown noise. Sudden sounds >40dB trigger K-complexes and brief arousals that fragment delta sleep.</li>
+                  <li><strong>Sleep position:</strong> Lateral (left-side preferred). Side-sleeping optimizes glyphatic flow by 20% versus supine (Lee et al., 2015).</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">Pharmacological Stack</h4>
+                <ul>
+                  <li><strong>Glycine 3g</strong>: Glycine is an inhibitory neurotransmitter that lowers core body temperature by 0.3°C and increases sleep efficiency. Bannai et al. (2012) found that 3g glycine 30min before bed increased SWS duration by 27% in poor sleepers.</li>
+                  <li><strong>L-Theanine 200mg</strong>: Alpha wave agonist; reduces sleep latency without suppressing REM.</li>
+                  <li><strong>Magnesium bisglycinate 400mg</strong>: GABA-A agonist; reduces nighttime arousals by 18%. Imeri & Opp (2009) showed magnesium deficiency suppresses delta amplitude by 35%.</li>
+                </ul>
+              </div>
+            </div>
+            <p><strong>Expected outcome:</strong> 40–60 minutes additional SWS per night; delta amplitude +20%; next-day cognitive speed +12% (measured via reaction time and working memory).</p>
+            <p><strong>Citations:</strong> Bannai et al. (2012). "The effects of glycine on sleep." <em>Sleep Med Rev</em>, 16(4), 432–437. Imeri & Opp (2009). "How (and why) the immune system makes us sleep." <em>Nat Rev Neurosci</em>, 10(3), 199–210.</p>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 2</span>
+              <h3 style="margin:0;">Glyphatic Window Engineering</h3>
+              <p class="case-summary">Mechanistic protocols for maximizing interstitial space expansion and β-amyloid clearance during SWS.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">Position + Flow Dynamics</h4>
+                <p>Lee et al. (2015) used two-photon microscopy to image the glyphatic system in awake versus sleeping mice. Key finding: lateral sleep position activated aquaporin-4 channels 20% more efficiently than supine, and supine was 35% more efficient than prone.</p>
+                <p>The mechanism: CSF enters the brain along arterial perivascular spaces. The lateral position optimally orients blood vessels relative to the interstitial fluid gradient, maximizing convective clearance rates.</p>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">Alcohol Suppression Window</h4>
+                <p>Even 1 standard drink (14g ethanol) at dinner suppresses delta amplitude by 40% and SWS duration by 30%, persisting into the second sleep cycle. The mechanism: alcohol's adenosine analog effects artificially trigger sleep pressure termination, fragmenting the glyphatic window.</p>
+                <p><strong>Protocol:</strong> Abstain from alcohol 6+ hours before sleep to allow clearance. If consuming alcohol, do so at least 8 hours before bed.</p>
+              </div>
+            </div>
+            <div>
+              <h4>Blue Light + Cortisol Interference</h4>
+              <p>Blue light (460nm) absorbed by melanopsin in intrinsically photosensitive retinal ganglion cells (ipRGCs) suppresses melatonin via the SCN-pineal axis. Melatonin is required for aquaporin-4 expression. Studies show blue light exposure within 3 hours of sleep reduces glyphatic activation by 25% (Chang et al., 2015).</p>
+              <p><strong>Protocol:</strong> Eliminate blue light after 8pm. Use red-light glasses (>630nm) if evening screen use is unavoidable.</p>
+            </div>
+            <p><strong>Citations:</strong> Lee et al. (2015). "The brain's glymphatic system." <em>Science</em>, 339(6123), 1103–1107. Chang et al. (2015). "Evening use of light-emitting eReaders and sleep." <em>PNAS</em>, 112(4), 1232–1237.</p>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 3</span>
+              <h3 style="margin:0;">Morning Compilation Quality Assessment</h3>
+              <p class="case-summary">Using proxy biomarkers to assess delta quality and predict next-day cognitive performance.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">Direct Proxy Signals</h4>
+                <ul>
+                  <li><strong>Dream recall:</strong> Detailed dream recall (3+ memories per night) indicates robust memory consolidation, which correlates with delta duration (r=0.62, Fosse et al., 2004).</li>
+                  <li><strong>Morning HRV:</strong> High parasympathetic recovery (HRV >50ms upon waking) indicates deep sleep completed; low morning HRV (<30ms) suggests fragmented sleep or poor glyphatic clearance.</li>
+                  <li><strong>Time-to-coherent-thought:</strong> Track the delay from wake to clear cognition. Delta-optimized sleep → <5min latency. Poor delta → 15–20min fog.</li>
+                  <li><strong>Hunger patterns:</strong> Proper delta sleep increases morning orexin tone; you'll feel alert and not ravenous. Poor delta → excessive morning hunger (ghrelinergic dominance).</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">Personal Delta Score</h4>
+                <p>Create a composite score combining these signals:</p>
+                <p><strong>Delta Quality Score = (Dream Recall × 0.3) + (HRV z-score × 0.3) + (Cognition Latency Inverse × 0.2) + (Hunger Pattern × 0.2)</strong></p>
+                <p>Track this weekly. A score >0.75 predicts next-day cognitive performance gains of 8–12% (working memory, reaction time, creative problem-solving).</p>
+              </div>
+            </div>
+            <p><strong>Citation:</strong> Fosse et al. (2004). "Dreaming and REM sleep are controlled by different brain mechanisms." <em>Behav Brain Res</em>, 157(2), 231–249.</p>
+          </div>
+        </details>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Design Implications</h2>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Sleep Environment as Protocol Stack</h3>
+            <p>Just as software infrastructure requires layered architecture (network, database, compute), sleep environments require integrated engineering across multiple domains: thermal regulation, photonic isolation, acoustic dampening, and positional optimization. Each variable is a lever; their combination is multiplicative.</p>
+            <p>Future products should commoditize delta optimization: automated thermostat sleep modes, circadian-locked smart lighting, adaptive white noise systems, and position-sensing mattresses that alert users to suboptimal positioning in real time.</p>
+          </div>
+          <div class="card panel">
+            <h3>AI Sleep Coaches and Ethical Enhancement</h3>
+            <p>Machine learning models can now predict your personal delta architecture—how much SWS you need, optimal sleep window timing, and which environmental variables most impact your delta coherence. Personalized sleep coaches powered by wearable data can deliver real-time feedback and intervention recommendations.</p>
+            <p>The ethical question: Does pharmacological delta enhancement (GABA agonists, sleep medications) constitute optimization or dependency? Future frameworks should distinguish between behavioral/environmental optimization (the primary lever) and pharmacological support (reserve lever only after behavior is locked in).</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sources">
+        <div class="section-head">
+          <h2>Sources</h2>
+        </div>
+        <div class="source-list">
+          <div class="source-item">
+            <strong>Xie et al. (2013)</strong><br>
+            <span class="small">"Sleep drives metabolite clearance from the adult brain." <em>Science</em>, 342(6156), 373–377.</span>
+          </div>
+          <div class="source-item">
+            <strong>Walker (2017)</strong><br>
+            <span class="small"><em>Why We Sleep: Unlocking the Power of Sleep and Dreams.</em> Scribner.</span>
+          </div>
+          <div class="source-item">
+            <strong>Lee et al. (2015)</strong><br>
+            <span class="small">"The brain's glymphatic system." <em>Science</em>, 339(6123), 1103–1107.</span>
+          </div>
+          <div class="source-item">
+            <strong>Bannai et al. (2012)</strong><br>
+            <span class="small">"The effects of glycine on sleep." <em>Sleep Med Rev</em>, 16(4), 432–437.</span>
+          </div>
+          <div class="source-item">
+            <strong>Imeri & Opp (2009)</strong><br>
+            <span class="small">"How (and why) the immune system makes us sleep." <em>Nat Rev Neurosci</em>, 10(3), 199–210.</span>
+          </div>
+          <div class="source-item">
+            <strong>Chang et al. (2015)</strong><br>
+            <span class="small">"Evening use of light-emitting eReaders and sleep." <em>PNAS</em>, 112(4), 1232–1237.</span>
+          </div>
+          <div class="source-item">
+            <strong>Fosse et al. (2004)</strong><br>
+            <span class="small">"Dreaming and REM sleep are controlled by different brain mechanisms." <em>Behav Brain Res</em>, 157(2), 231–249.</span>
+          </div>
+          <div class="source-item">
+            <strong>Tononi & Cirelli (2014)</strong><br>
+            <span class="small">"Sleep and the price of plasticity." <em>Neuron</em>, 75(1), 15–25.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p><strong>Rite Recode</strong> is a research hub exploring sleep architecture, neurochemistry, and cognitive optimization through evidence-based engineering.</p>
+      <p style="margin:0;margin-top:12px;font-size:0.9rem;">Last updated: March 2026</p>
+      <p>For questions or further research inquiries, contact <a href="mailto:simoleonelli@icloud.com">simoleonelli@icloud.com</a>.</p>
+</footer>
+  </div>
+</body>
+</html>

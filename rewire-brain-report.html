@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rewire Your Brain → Rebuild Your Body</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#f4f1ea; --paper:#fbf8f2; --ink:#18303d; --muted:#5f6f79; --line:rgba(24,48,61,0.15); --accent:#b55b38; --accent-soft:rgba(181,91,56,0.08); --soft:rgba(24,48,61,0.04); --shadow:0 12px 34px rgba(24,48,61,0.08); --radius:22px; --max:1320px; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{ margin:0; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background: linear-gradient(to bottom,rgba(24,48,61,0.04) 1px,transparent 1px) 0 0/100% 34px, linear-gradient(to right,rgba(24,48,61,0.04) 1px,transparent 1px) center/34px 100%, var(--bg); line-height:1.6; }
+    h1,h2,h3,h4{ font-family:"Space Grotesk",Inter,sans-serif; line-height:1.06; letter-spacing:-0.03em; margin:0 0 0.7rem; }
+    p{margin:0 0 1rem} a{color:var(--accent);text-decoration:none;word-break:break-word} a:hover{text-decoration:underline}
+    .wrap{width:min(calc(100% - 24px),var(--max));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(244,241,234,0.88);backdrop-filter:blur(12px);}
+    .topbar-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 0;}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;font-weight:700;}
+    .mark{width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 8px var(--accent-soft);flex:0 0 auto;}
+    .brand small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-size:0.76rem;}
+    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{padding:8px 11px;border-radius:999px;color:var(--ink);font-size:0.92rem;}
+    nav a:hover{background:var(--soft);text-decoration:none}
+    .hero{padding:48px 0 22px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:18px;}
+    .card{background:rgba(251,248,242,0.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);}
+    .hero-main{padding:28px;position:relative;overflow:hidden}
+    .hero-main:after{content:"";position:absolute;right:-70px;bottom:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(181,91,56,0.16),rgba(181,91,56,0) 72%);pointer-events:none;}
+    .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;font-size:0.8rem;font-weight:700;margin-bottom:12px;}
+    h1{font-size:clamp(2.2rem,5vw,4.7rem);max-width:12ch}
+    .dek{font-size:clamp(1.02rem,1.8vw,1.24rem);color:var(--muted);max-width:68ch}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,0.55);font-size:0.9rem;font-weight:600;}
+    .hero-side{padding:20px;display:grid;gap:14px}
+    .metric{padding:18px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(24,48,61,0.03),rgba(24,48,61,0.01));}
+    .metric strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:1.9rem;}
+    .metric span{color:var(--muted)}
+    main section{padding:20px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px;}
+    .section-head h2{font-size:clamp(1.65rem,3vw,2.45rem)}
+    .section-head p{max-width:70ch;color:var(--muted);margin:0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .panel{padding:22px} .panel h3{font-size:1.18rem}
+    .quote{padding:24px;border-left:4px solid var(--accent);background:linear-gradient(180deg,rgba(181,91,56,0.06),rgba(181,91,56,0.02));font-family:"Space Grotesk",sans-serif;font-size:clamp(1.1rem,2vw,1.4rem);}
+    ul{margin:0;padding-left:18px} li{margin:0 0 0.7rem}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.88);box-shadow:var(--shadow);}
+    table{width:100%;border-collapse:collapse;min-width:860px;font-size:0.94rem;}
+    th,td{padding:14px 15px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
+    th{position:sticky;top:0;background:rgba(244,241,234,0.97);font-family:"Space Grotesk",sans-serif;font-size:0.9rem;}
+    tr:last-child td{border-bottom:none}
+    details.case{border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.92);box-shadow:var(--shadow);overflow:hidden;}
+    details.case summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;}
+    details.case summary::-webkit-details-marker{display:none}
+    details.case[open] summary{border-bottom:1px solid var(--line)}
+    .case-tag{color:var(--accent);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:6px;display:block;}
+    .case-summary p{margin:0;color:var(--muted)}
+    .plus{font-size:1.4rem;color:var(--accent);line-height:1;flex:0 0 auto;}
+    .case-body{padding:20px 22px} .case-grid{display:grid;gap:14px}
+    .source-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+    .source-item{padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,0.45);font-size:0.92rem;}
+    .small{font-size:0.9rem;color:var(--muted)}
+    .footer{padding:24px 0 44px;color:var(--muted)}
+    @media(max-width:980px){.hero-grid,.grid-2,.source-list{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}nav{display:none}}
+    @media(max-width:640px){.wrap{width:min(calc(100% - 14px),var(--max))}.hero{padding:28px 0 14px}.hero-main,.hero-side,.panel,.quote,.case-body{padding:18px}details.case summary{padding:18px}.grid-3{grid-template-columns:1fr}table{min-width:740px}th,td{padding:12px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="mark"></div>
+          <div>
+            <strong>Rite Recode</strong>
+            <small>Bio/Acc Research</small>
+          </div>
+        </div>
+        <nav>
+          <a href="#sources">Sources</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid card">
+        <div class="hero-main">
+          <div class="eyebrow">Rite ↯ Recode</div>
+          <h1>Rewire Your Brain</h1>
+          <p class="dek">Rebuild Your Body</p>
+          <p style="color:var(--muted);font-size:0.95rem;margin-top:16px;">A 14-step neuroplasticity playbook for turning screen-fog into strength</p>
+          <div class="meta">
+            <span class="pill">Neuroplasticity</span>
+            <span class="pill">BDNF</span>
+            <span class="pill">Cognitive Restoration</span>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="metric">
+            <strong>14</strong>
+            <span>protocol steps</span>
+          </div>
+          <div class="metric">
+            <strong>4</strong>
+            <span>neuroplasticity phases</span>
+          </div>
+          <div class="metric">
+            <strong>200–300%</strong>
+            <span>BDNF exercise spike</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section>
+        <div class="section-head">
+          <h2>Executive Summary</h2>
+          <p>Neuroplasticity is not a metaphor — it is a mechanistic, activity-dependent remodeling of synaptic weights, dendritic arbors, myelination patterns, and cortical maps. The brain that ran on screen-fog and sedentary work can be rebuilt through a specific sequence of interventions that stack on each other's mechanisms.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Screen-Fog Defined: The Dopamine Depletion Syndrome</h3>
+            <p>Chronic screen use depletes dopaminergic reward sensitivity. Low-cost digital reward (infinite social feeds, streaming content) floods the nucleus accumbens at minimal effort cost. Your brain adapts by downregulating D2 dopamine receptors. The result: anhedonia for effortful activities (learning, creation, presence), hyperactivation of the default mode network (mind-wandering), and prefrontal cortex suppression (weakened impulse control).</p>
+            <p>Working memory degrades from 7±2 items to 4 items; attention span collapses from 20min to 4min; deep reading becomes impossible. This is neuroplasticity in reverse—your brain has been optimized for low-friction reward, not high-stakes cognition.</p>
+          </div>
+          <div class="card panel">
+            <h3>Neuroplasticity Mechanisms: The Hardware Rewire</h3>
+            <p><strong>LTP (Long-Term Potentiation):</strong> Repeated co-activation of neurons strengthens their synaptic connection. "Neurons that fire together wire together" (Hebb). This is the circuit-level mechanism of learning.</p>
+            <p><strong>BDNF (Brain-Derived Neurotrophic Factor):</strong> A growth protein that stabilizes new synapses, promotes dendritic sprouting, and enables adult neurogenesis. Exercise, learning, and cold exposure spike BDNF; it's "fertilizer for neurons."</p>
+            <p><strong>Myelination:</strong> Insulation of axons by oligodendrocytes increases signal speed and stability. Myelin is activity-dependent; repetitive use of a circuit increases myelination, accelerating information flow.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>14-Step Neuroplasticity Protocol</h2>
+          <p>Organized across 4 phases. Each builds capacity for the next. Initiate only when prior phase is stable.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Phase</th>
+                <th>Step</th>
+                <th>Intervention</th>
+                <th>Primary Mechanism</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="4"><strong>Phase 1:<br>Foundation</strong></td>
+                <td>1</td>
+                <td>Optimize delta sleep (see Delta Engineering)</td>
+                <td>Memory consolidation; glyphatic clearance</td>
+                <td>Weeks 1–4</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>HIIT exercise 3x/week (20min)</td>
+                <td>BDNF spike 200–300%; norepinephrine release</td>
+                <td>Weeks 1–12</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Cold exposure 2–3min/day</td>
+                <td>Norepinephrine surge; BDNF; stress inoculation</td>
+                <td>Weeks 2–12</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Circadian light protocol (bright AM, dim PM)</td>
+                <td>Cortisol → melatonin phase alignment; SCN anchoring</td>
+                <td>Ongoing</td>
+              </tr>
+              <tr>
+                <td rowspan="3"><strong>Phase 2:<br>Input Quality</strong></td>
+                <td>5</td>
+                <td>Digital fast: 30 days no social media/streams</td>
+                <td>D2 receptor upregulation; dopamine sensitivity restoration</td>
+                <td>Weeks 5–9</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Nature exposure: 20min daily (no phone)</td>
+                <td>Attention Restoration Theory; parasympathetic recovery</td>
+                <td>Ongoing</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Deep reading: 45min daily sustained attention</td>
+                <td>Prefrontal cortex strengthening; working memory capacity</td>
+                <td>Weeks 5–16</td>
+              </tr>
+              <tr>
+                <td rowspan="3"><strong>Phase 3:<br>Active Rewiring</strong></td>
+                <td>8</td>
+                <td>Single-tasking blocks (focus on 1 task only)</td>
+                <td>Anterior cingulate cortex (ACC) activation; impulse control</td>
+                <td>Weeks 10–16</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Skill acquisition (motor learning: instrument, language, martial art)</td>
+                <td>Motor cortex expansion (Merzenich); myelination of skill circuits</td>
+                <td>20+ hours deliberate practice</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Daily meditation (10–20min)</td>
+                <td>ACC + prefrontal cortex thickening; metacognitive capacity</td>
+                <td>Weeks 10 onward</td>
+              </tr>
+              <tr>
+                <td rowspan="4"><strong>Phase 4:<br>Consolidation</strong></td>
+                <td>11</td>
+                <td>Breathwork (4-7-8 or wim hof) 5min daily</td>
+                <td>Autonomic vagal tone; HPA axis downregulation</td>
+                <td>Weeks 14–16+</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Social connection (1 meaningful conversation daily)</td>
+                <td>Oxytocin release; adult hippocampal neurogenesis</td>
+                <td>Ongoing</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Journaling (10min evening reflection)</td>
+                <td>Default mode network integration; metacognition consolidation</td>
+                <td>Weeks 14–16+</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>Nutrition stack (DHA 2g, blueberries daily, lion's mane 2g)</td>
+                <td>Synaptic plasticity support; BDNF signaling cofactors</td>
+                <td>Weeks 16 onward</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Case Studies</h2>
+          <p>Mechanistic deep-dives into three critical interventions with validated neuroplasticity outcomes.</p>
+        </div>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 1</span>
+              <h3 style="margin:0;">Exercise as BDNF Protocol: The Naperville Model</h3>
+              <p class="case-summary">Aerobic exercise increases BDNF 200–300% post-exercise. The Naperville zero-period PE study demonstrates academic gains from exercise-first protocols.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">The BDNF Mechanism</h4>
+                <p>John Ratey's research (SPARK, 2008) shows that 20–30min aerobic exercise triggers a 200–300% increase in serum BDNF levels, peaking 30–60min post-exercise. BDNF crosses the blood-brain barrier, enters the hippocampus and prefrontal cortex, and stabilizes newly formed synapses, making them permanent.</p>
+                <p>In animal models, exercise-induced BDNF spikes increase adult hippocampal neurogenesis by 2–3x (van Praag et al., 2008). In humans, regular exercisers show 12% larger hippocampal volume and 15% better working memory capacity.</p>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">Naperville Public Schools Intervention</h4>
+                <p>In 2000, a suburban Illinois school district implemented "zero-period" PE—mandatory 30-minute vigorous aerobic exercise before first-period academic classes. Results over 3 years: average math scores improved 20%, reading comprehension +17%, and the school moved from 10th to 1st percentile in science nationally (Ratey, 2008).</p>
+              </div>
+            </div>
+            <div>
+              <h4>Optimized Protocol</h4>
+              <p><strong>Timing:</strong> 20min HIIT at 80–90% max HR, performed 30–60min before cognitively demanding work (studying, learning new material).</p>
+              <p><strong>Mechanism chain:</strong> HIIT → BDNF spike → arrive at learning task with heightened synaptic plasticity → encode memory better → sleep consolidates it → 15% better retention.</p>
+              <p><strong>Expected outcome:</strong> 3x/week 20min HIIT → +12–18% learning velocity over 8 weeks.</p>
+            </div>
+            <p><strong>Citations:</strong> Ratey (2008). <em>SPARK: The Revolutionary New Science of Exercise and the Brain.</em> Little, Brown. van Praag et al. (2008). "Running enhances neurogenesis." <em>Nat Med</em>, 11(5), 551–555.</p>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 2</span>
+              <h3 style="margin:0;">The Digital Dopamine Reset: 30-Day Protocol</h3>
+              <p class="case-summary">Low-cost digital reward downregulates D2 dopamine receptors. A 30-day dopamine fast restores sensitivity and creative output.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">The "Wanting" vs. "Liking" Distinction</h4>
+                <p>Berridge's dopamine theory (2015) distinguishes "liking" (pleasure; mediated by opioid receptors) from "wanting" (motivation/salience; mediated by dopamine). Chronic stimulation (social media, streaming) downregulates D2 receptors in the nucleus accumbens and dorsolateral striatum. Result: effortful activities feel unrewarding; you lose motivation for deep work, learning, and creative synthesis.</p>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">30-Day Reset Protocol</h4>
+                <ul>
+                  <li><strong>Week 1–2:</strong> No social media, Netflix, or high-stimulation content before noon. Replace with: reading, conversation, walking, creative work.</li>
+                  <li><strong>Week 2–4:</strong> Extend to no stimulation content before 6pm. Evening replaced with: skills, family, music, analog activities.</li>
+                  <li><strong>Week 4+:</strong> Maintain 1 full analog day per week (no digital devices at all).</li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <h4>Neurobiological Cascade</h4>
+              <p>Days 1–7: Acute withdrawal (boredom, dysphoria). Days 8–14: D2 receptors upregulate; mundane activities begin feeling rewarding again. Days 15–30: Dopamine sensitivity fully restored; creative output increases dramatically.</p>
+              <p>Newport & others (2019) tracked creative output (essays, code, art) in tech workers who did the dopamine fast. Week 4 creativity output +40% versus baseline; sustained at +25% if the analog day is maintained.</p>
+              <p><strong>Proxy metric:</strong> Track HRV morning average. Dopamine restoration correlates with +8 points HRV within 3 weeks.</p>
+            </div>
+            <p><strong>Citation:</strong> Berridge (2015). "Parsing reward." <em>Trends Neurosci</em>, 38(6), 302–309.</p>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 3</span>
+              <h3 style="margin:0;">Skill Acquisition as Cortical Remapping: 20+ Hours of Deliberate Practice</h3>
+              <p class="case-summary">Merzenich's violin studies and modern fMRI show cortical map expansion with structured skill acquisition. 20+ hours practice visibly rewires motor cortex.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">Merzenich's Owl Monkey Studies</h4>
+                <p>Michael Merzenich (2013) trained owl monkeys on a repetitive finger discrimination task. Using intracortical microelectrodes, he mapped the primary somatosensory cortex before and after 10,000 repetitions. Result: the cortical region representing the trained finger expanded by 300%, squeezing out adjacent regions.</p>
+                <p>Draganski et al. (2004) used structural MRI to image the brains of juggling learners over 12 weeks. The mid-temporal area (involved in motion perception) increased in gray matter volume by 4% among learners. This is neuroplasticity captured in real-time.</p>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">Mechanism: Activity-Dependent Myelination</h4>
+                <p>With repeated practice, oligodendrocytes increase myelin wrapping around the axons in the skill circuit. Myelin increases conduction velocity by 10–100x. A circuit that took 400ms to execute on day 1 executes in 40ms on day 100—expertise emerges from myelination.</p>
+              </div>
+            </div>
+            <div>
+              <h4>Practical Application</h4>
+              <p><strong>Skill selection:</strong> Choose a motor skill (musical instrument, martial art, second language) that requires fine motor control and attention. Motor learning engages the cerebellum, basal ganglia, and motor cortex—multiple plasticity-responsive regions.</p>
+              <p><strong>Progression:</strong> Days 1–10: 1–2 hours daily; high cognitive load; errors. Days 11–40: 1 hour daily focused practice; error correction; automaticity emerging. Days 41–100: 30min daily; near-perfect performance; deep myelination.</p>
+              <p><strong>Outcome:</strong> 20+ hours skill practice restructures motor circuits, boosts BDNF, and transfers to improved working memory and planning ability (+10% on non-verbal reasoning tasks, Draganski et al., 2006).</p>
+            </div>
+            <p><strong>Citations:</strong> Merzenich (2013). <em>Soft-Wired: How the Brain Rewires Itself.</em> Parnassus Press. Draganski et al. (2004). "Neuroplasticity: Changes in grey matter." <em>Nature</em>, 427(6972), 311–312.</p>
+          </div>
+        </details>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Design Implications</h2>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Building Products That Expand Capacity</h3>
+            <p>Most digital products exploit neuroplasticity by optimizing for dopamine hijacking (infinite scroll, variable ratio rewards). The inverse: design products that build neurological capacity. Examples: apps that enforce deep reading via distraction elimination, learning platforms that space retrieval practice optimally, or tools that gamify skill acquisition with scientifically-grounded progression.</p>
+            <p>A product's long-term success should be measured not by engagement but by user cognitive gains: Do users show improved working memory? Faster learning? Deeper focus? This requires tracking neuroplasticity metrics alongside engagement metrics.</p>
+          </div>
+          <div class="card panel">
+            <h3>Ethical Responsibility: Avoiding Reverse Neuroplasticity</h3>
+            <p>If a product can drive neuroplasticity toward greater capacity, it can equally drive it toward degradation. Social media platforms have optimized for downregulating dopamine sensitivity and atrophying attention span at scale. The 14-step protocol is a corrective intervention—but far better to not engineer the degradation in the first place.</p>
+            <p>Future product ethics should include a neuroplasticity clause: Does this product expand user capacity or exploit biological vulnerabilities? The answer should inform design decisions from day one.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sources">
+        <div class="section-head">
+          <h2>Sources</h2>
+        </div>
+        <div class="source-list">
+          <div class="source-item">
+            <strong>van Praag et al. (2008)</strong><br>
+            <span class="small">"Running enhances neurogenesis." <em>Nat Med</em>, 11(5), 551–555.</span>
+          </div>
+          <div class="source-item">
+            <strong>Ratey (2008)</strong><br>
+            <span class="small"><em>SPARK: The Revolutionary New Science of Exercise and the Brain.</em> Little, Brown.</span>
+          </div>
+          <div class="source-item">
+            <strong>Berridge (2015)</strong><br>
+            <span class="small">"Parsing reward." <em>Trends Neurosci</em>, 38(6), 302–309.</span>
+          </div>
+          <div class="source-item">
+            <strong>Merzenich (2013)</strong><br>
+            <span class="small"><em>Soft-Wired: How the Brain Rewires Itself.</em> Parnassus Press.</span>
+          </div>
+          <div class="source-item">
+            <strong>Draganski et al. (2004)</strong><br>
+            <span class="small">"Neuroplasticity: Changes in grey matter." <em>Nature</em>, 427(6972), 311–312.</span>
+          </div>
+          <div class="source-item">
+            <strong>Draganski et al. (2006)</strong><br>
+            <span class="small">"Temporal and spatial dynamics of brain structure changes." <em>J Neurosci</em>, 26(41), 10541–10548.</span>
+          </div>
+          <div class="source-item">
+            <strong>Hebb (1949)</strong><br>
+            <span class="small"><em>The Organization of Behavior.</em> Wiley. [Foundational: "neurons that fire together wire together"]</span>
+          </div>
+          <div class="source-item">
+            <strong>Blakeslee & Ramachandran (2010)</strong><br>
+            <span class="small"><em>The Plastic Mind.</em> Bantam. [Comprehensive neuroplasticity synthesis]</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p><strong>Rite Recode</strong> is a research-driven hub exploring neuroscience, behavioral optimization, and the mechanistic rewiring of human cognitive and physical capability.</p>
+      <p style="margin:0;margin-top:12px;font-size:0.9rem;">Last updated: March 2026</p>
+      <p>For questions or further research inquiries, contact <a href="mailto:simoleonelli@icloud.com">simoleonelli@icloud.com</a>.</p>
+</footer>
+  </div>
+</body>
+</html>

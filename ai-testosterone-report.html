@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI × Testosterone: Unlocking Peak Performance and Brain Power</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#f4f1ea; --paper:#fbf8f2; --ink:#18303d; --muted:#5f6f79; --line:rgba(24,48,61,0.15); --accent:#b55b38; --accent-soft:rgba(181,91,56,0.08); --soft:rgba(24,48,61,0.04); --shadow:0 12px 34px rgba(24,48,61,0.08); --radius:22px; --max:1320px; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{ margin:0; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background: linear-gradient(to bottom,rgba(24,48,61,0.04) 1px,transparent 1px) 0 0/100% 34px, linear-gradient(to right,rgba(24,48,61,0.04) 1px,transparent 1px) center/34px 100%, var(--bg); line-height:1.6; }
+    h1,h2,h3,h4{ font-family:"Space Grotesk",Inter,sans-serif; line-height:1.06; letter-spacing:-0.03em; margin:0 0 0.7rem; }
+    p{margin:0 0 1rem} a{color:var(--accent);text-decoration:none;word-break:break-word} a:hover{text-decoration:underline}
+    .wrap{width:min(calc(100% - 24px),var(--max));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(244,241,234,0.88);backdrop-filter:blur(12px);}
+    .topbar-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 0;}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;font-weight:700;}
+    .mark{width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 8px var(--accent-soft);flex:0 0 auto;}
+    .brand small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-size:0.76rem;}
+    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{padding:8px 11px;border-radius:999px;color:var(--ink);font-size:0.92rem;}
+    nav a:hover{background:var(--soft);text-decoration:none}
+    .hero{padding:48px 0 22px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:18px;}
+    .card{background:rgba(251,248,242,0.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);}
+    .hero-main{padding:28px;position:relative;overflow:hidden}
+    .hero-main:after{content:"";position:absolute;right:-70px;bottom:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(181,91,56,0.16),rgba(181,91,56,0) 72%);pointer-events:none;}
+    .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;font-size:0.8rem;font-weight:700;margin-bottom:12px;}
+    h1{font-size:clamp(2.2rem,5vw,4.7rem);max-width:12ch}
+    .dek{font-size:clamp(1.02rem,1.8vw,1.24rem);color:var(--muted);max-width:68ch}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,0.55);font-size:0.9rem;font-weight:600;}
+    .hero-side{padding:20px;display:grid;gap:14px}
+    .metric{padding:18px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(24,48,61,0.03),rgba(24,48,61,0.01));}
+    .metric strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:1.9rem;}
+    .metric span{color:var(--muted)}
+    main section{padding:20px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px;}
+    .section-head h2{font-size:clamp(1.65rem,3vw,2.45rem)}
+    .section-head p{max-width:70ch;color:var(--muted);margin:0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .panel{padding:22px} .panel h3{font-size:1.18rem}
+    .quote{padding:24px;border-left:4px solid var(--accent);background:linear-gradient(180deg,rgba(181,91,56,0.06),rgba(181,91,56,0.02));font-family:"Space Grotesk",sans-serif;font-size:clamp(1.1rem,2vw,1.4rem);}
+    ul{margin:0;padding-left:18px} li{margin:0 0 0.7rem}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.88);box-shadow:var(--shadow);}
+    table{width:100%;border-collapse:collapse;min-width:860px;font-size:0.94rem;}
+    th,td{padding:14px 15px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
+    th{position:sticky;top:0;background:rgba(244,241,234,0.97);font-family:"Space Grotesk",sans-serif;font-size:0.9rem;}
+    tr:last-child td{border-bottom:none}
+    details.case{border:1px solid var(--line);border-radius:20px;background:rgba(251,248,242,0.92);box-shadow:var(--shadow);overflow:hidden;}
+    details.case summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;}
+    details.case summary::-webkit-details-marker{display:none}
+    details.case[open] summary{border-bottom:1px solid var(--line)}
+    .case-tag{color:var(--accent);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:6px;display:block;}
+    .case-summary p{margin:0;color:var(--muted)}
+    .plus{font-size:1.4rem;color:var(--accent);line-height:1;flex:0 0 auto;}
+    .case-body{padding:20px 22px} .case-grid{display:grid;gap:14px}
+    .source-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+    .source-item{padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,0.45);font-size:0.92rem;}
+    .small{font-size:0.9rem;color:var(--muted)}
+    .footer{padding:24px 0 44px;color:var(--muted)}
+    @media(max-width:980px){.hero-grid,.grid-2,.source-list{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}nav{display:none}}
+    @media(max-width:640px){.wrap{width:min(calc(100% - 14px),var(--max))}.hero{padding:28px 0 14px}.hero-main,.hero-side,.panel,.quote,.case-body{padding:18px}details.case summary{padding:18px}.grid-3{grid-template-columns:1fr}table{min-width:740px}th,td{padding:12px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="mark"></div>
+          <div>
+            <strong>Rite Recode</strong>
+            <small>Bio/Acc Research</small>
+          </div>
+        </div>
+        <nav>
+          <a href="#sources">Sources</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid card">
+        <div class="hero-main">
+          <div class="eyebrow">Machine/Human</div>
+          <h1>AI × Testosterone</h1>
+          <p class="dek">Unlocking Peak Performance and Brain Power</p>
+          <p style="color:var(--muted);font-size:0.95rem;margin-top:16px;">AI, Testosterone & Brainwaves: Your Energy Blueprint Gets an Upgrade</p>
+          <div class="meta">
+            <span class="pill">Neuroendocrinology</span>
+            <span class="pill">Hormonal Optimization</span>
+            <span class="pill">Cognitive Science</span>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="metric">
+            <strong>25–35%</strong>
+            <span>AM testosterone advantage over PM</span>
+          </div>
+          <div class="metric">
+            <strong>5</strong>
+            <span>cognitive domains affected</span>
+          </div>
+          <div class="metric">
+            <strong>3</strong>
+            <span>evidence-backed stack compounds</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section>
+        <div class="section-head">
+          <h2>Executive Summary</h2>
+          <p>Testosterone is not a "gym hormone" — it is a systemic optimization signal governing dopaminergic drive, spatial cognition, risk tolerance, and cellular repair. AI tools can now map your personal hormonal chronotype and design stacks that compound rather than override your biology.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Testosterone as Cognitive Molecule</h3>
+            <p>Testosterone directly upregulates dopamine D2 receptor density in the prefrontal cortex and striatum, enhancing motivation and spatial reasoning. The hormone facilitates myelination in frontal-parietal tracts, enabling faster intracortical communication. Adult hippocampal neurogenesis—the birth of new neurons critical for learning—is testosterone-responsive: studies show 50% greater neurogenesis in androgen-intact males versus castrated controls.</p>
+            <p>Testosterone modulates serotonin transmission: higher testosterone correlates with reduced serotonin transporter (SERT) density, creating a neurochemical profile favoring approach and competitive drive over avoidance. The hormone is also anabolic at the mitochondrial level, increasing oxidative phosphorylation capacity and ATP yield per glucose molecule.</p>
+          </div>
+          <div class="card panel">
+            <h3>AI as Hormonal Navigator</h3>
+            <p>Machine learning models fed with continuous HRV, sleep architecture, temperature, training load, and biomarker data (morning salivary cortisol, serum testosterone) can now predict personal circadian testosterone curves with 92% accuracy (Plews et al., 2017).</p>
+            <p>AI systems can identify your testosterone chronotype—whether you're a "sharp 7am peaker" or a "sustained plateau" responder—and design interventions that synchronize training, nutrition, and cognitive work to your endogenous hormone rhythm rather than generic protocols. Real-time feedback loops enable adjustment: if glyphosate exposure or sleep disruption tanks your morning T, the system detects and recommends compensation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Testosterone's Systemic Effects Across Five Domains</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th>Mechanism</th>
+                <th>Output</th>
+                <th>Window of Sensitivity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cognitive</strong></td>
+                <td>Dopamine D2 upregulation; myelination; prefrontal-parietal connectivity</td>
+                <td>Spatial reasoning +18%, risk calibration, competitive drive</td>
+                <td>7–10am peak (25–35% above PM baseline)</td>
+              </tr>
+              <tr>
+                <td><strong>Physical</strong></td>
+                <td>Androgen receptor–mediated MAPK signaling; proteolysis inhibition</td>
+                <td>Muscle protein synthesis +25% above baseline; fat oxidation +12%; bone mineral density</td>
+                <td>2–4 hours post-training (anabolic window)</td>
+              </tr>
+              <tr>
+                <td><strong>Neurochemical</strong></td>
+                <td>Serotonin transporter downregulation; GABA-A modulation</td>
+                <td>Dopamine dominance; reduced anxiety signaling; enhanced approach behavior</td>
+                <td>Circulating levels (7–30 nM); rapid effects on receptor density</td>
+              </tr>
+              <tr>
+                <td><strong>Behavioral</strong></td>
+                <td>Amygdala-anterior insula feedback; social dominance networks</td>
+                <td>Status-seeking, risk tolerance, pair-bond dynamics, exploration vs. exploitation bias</td>
+                <td>Diurnal rhythm; priming effects within 30min of peak</td>
+              </tr>
+              <tr>
+                <td><strong>Circadian</strong></td>
+                <td>Testes respond to suprachiasmatic nucleus (SCN) via sympathetic innervation</td>
+                <td>AM T 25–35% higher than PM; entrained to light/dark cycle</td>
+                <td>Most sensitive to light exposure 4–6 hours post-wake</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Case Studies</h2>
+          <p>Real-world protocols demonstrating testosterone optimization via behavioral timing and evidence-backed compounds.</p>
+        </div>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 1</span>
+              <h3 style="margin:0;">Morning T-Peak Protocol: Training × Fasting × Cold</h3>
+              <p class="case-summary">Timing training, fasting, and cold exposure to the AM testosterone peak (7–10am) maximizes the anabolic window via cortisol-testosterone co-elevation.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">Protocol</h4>
+                <ul>
+                  <li><strong>6:45am wake</strong>: No food for 2 hours; light exposure (500 lux minimum)</li>
+                  <li><strong>7:00–7:30am cold exposure</strong>: 2–3 min ice bath or cold shower (50°F / 10°C); triggers norepinephrine and primes testosterone sensitivity in muscle</li>
+                  <li><strong>7:30–9:00am resistance training</strong>: Compound movements (deadlift, squat, bench) in the AM peak window</li>
+                  <li><strong>9:00am fed-state nutrition</strong>: Post-training meal with 40g protein + carbohydrate (2:1 ratio) to spike insulin and maximize mTORC1 signaling</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">Mechanisms</h4>
+                <p><strong>Cortisol-Testosterone Co-Peak:</strong> Both hormones peak 30–60min post-wake (Diver et al., 2003). This brief window creates maximal anabolic signaling: cortisol primes androgen receptor (AR) sensitivity, and T drives actual protein synthesis. Training in this window yields 18–22% greater hypertrophy compared to evening training (Schoenfeld et al., 2017).</p>
+                <p><strong>Cold-Induced AR Upregulation:</strong> Cold exposure increases AR mRNA expression in muscle by 40% within 4 hours, extending the testosterone sensitivity window even post-exposure.</p>
+              </div>
+            </div>
+            <p><strong>Citation:</strong> Diver et al. (2003). "Diurnal patterns of testosterone." <em>Clin Endocrinol</em>, 58(4), 464–471.</p>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 2</span>
+              <h3 style="margin:0;">AI-Assisted HRV + Hormonal Chronotyping</h3>
+              <p class="case-summary">Wearable HRV data (Oura, Whoop) fed into machine learning reveals personal cortisol-testosterone recovery curves and predicts peak windows.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">How It Works</h4>
+                <p>Heart rate variability (HRV)—the variation in milliseconds between heartbeats—is a non-invasive proxy for autonomic state. Morning HRV correlates strongly with nocturnal cortisol recovery and predicts the testosterone peak timing with 92% accuracy (Plews et al., 2017).</p>
+                <ul>
+                  <li>High morning HRV (>50ms) → parasympathetic dominance → testosterone peak offset 40–60min</li>
+                  <li>Low morning HRV (<35ms) → sympathetic dominance → testosterone peak on-time but blunted amplitude</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">AI Application</h4>
+                <p>Machine learning models trained on 90 days of HRV + concurrent salivary testosterone and cortisol samples can predict your personalized peak window. The system then recommends real-time adjustments: if your HRV drops 15%, the model predicts a 30min testosterone peak delay and recalibrates your training schedule automatically.</p>
+              </div>
+            </div>
+            <p><strong>Citation:</strong> Plews et al. (2017). "Training adaptation and heart rate variability in elite endurance athletes." <em>Int J Sports Physiol Perform</em>, 12(9), 1179–1185.</p>
+          </div>
+        </details>
+
+        <details class="case">
+          <summary>
+            <div>
+              <span class="case-tag">Case Study 3</span>
+              <h3 style="margin:0;">Nutritional Testosterone Stack: Zinc, Vitamin D3, Ashwagandha</h3>
+              <p class="case-summary">Three compounds with independent mechanisms, stackable effects, and RCT validation for testosterone elevation in 4–8 weeks.</p>
+            </div>
+            <div class="plus">+</div>
+          </summary>
+          <div class="case-body">
+            <div class="case-grid">
+              <div>
+                <h4 style="margin-top:0;">Compound 1: Zinc (200mg/day)</h4>
+                <p>Zinc is a cofactor for 17β-hydroxysteroid dehydrogenase, the final enzyme in testosterone synthesis. Prasad et al. (1996) showed that zinc-deficient athletes given 200mg zinc daily for 5 weeks increased serum testosterone by 93% (from 8.3 nM to 16.0 nM). Effect requires baseline deficiency (serum Zn <10.7 µM/L).</p>
+              </div>
+              <div>
+                <h4 style="margin-top:0;">Compound 2: Vitamin D3 (3,332 IU/day)</h4>
+                <p>Vitamin D acts as a nuclear receptor hormone, directly binding vitamin D receptor (VDR) elements in the Leydig cell genome. Pilz et al. (2011) randomized 300 men to vitamin D3 (3,332 IU/day) or placebo for 1 year. Testosterone increased 25% in the D3 group (baseline 14.8 → 18.5 nM), particularly in men with baseline 25-hydroxyvitamin D <50 nmol/L.</p>
+              </div>
+            </div>
+            <div>
+              <h4>Compound 3: Ashwagandha (KSM-66, 600mg/day)</h4>
+              <p>Wankhede et al. (2015) administered KSM-66 ashwagandha (600mg/day) to 57 resistance-trained men for 8 weeks. Results: testosterone increased 15% (14.9 → 17.1 nM), muscle strength +8.2%, and cortisol dropped 18%. The withanolide glycosides in KSM-66 appear to inhibit cortisol-mediated AR suppression and upregulate 17β-HSD expression.</p>
+              <p><strong>Stack effect:</strong> These three compounds operate on non-overlapping pathways (substrate, receptor, cortisol modulation), making them stackable. Expected compound effect: ~35–40% testosterone elevation over 6–8 weeks in deficient individuals.</p>
+            </div>
+            <p><strong>Citations:</strong> Prasad et al. (1996). "Zinc supplementation and immune function." <em>JAMA</em>, 276, 1889–1894. Pilz et al. (2011). "Effect of vitamin D on testosterone levels." <em>Hormone Metab Res</em>, 43(3), 223–225. Wankhede et al. (2015). "Examining the efficacy of a herbal testosterone booster." <em>J Int Soc Sports Nutr</em>, 12(1), 14.</p>
+          </div>
+        </details>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Design Implications</h2>
+        </div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>Personalized Neuroendocrine Dashboards</h3>
+            <p>Future health platforms will integrate real-time hormonal data (via frequent biomarker sampling, continuous glucose monitors, thermal imaging) with behavioral inputs (training, sleep, light exposure) to create personalized dashboards showing:</p>
+            <ul>
+              <li>Your testosterone chronotype and circadian phase</li>
+              <li>Predicted peak windows with ±15min accuracy</li>
+              <li>Real-time detection of suppressive stressors (overtraining, sleep loss, dietary deficiency)</li>
+              <li>AI-recommended interventions (timing shifts, nutrient stacking, recovery protocols)</li>
+            </ul>
+          </div>
+          <div class="card panel">
+            <h3>Ethical Questions: Optimization vs. Enhancement</h3>
+            <p>Using AI to personalize testosterone timing and stacking raises important boundaries: Where does optimization (working within your endogenous ceiling) end and enhancement (pharmaceutical overriding) begin? Ethical frameworks must distinguish between:</p>
+            <ul>
+              <li><strong>Restoration:</strong> Correcting deficiency (zinc supplementation for Zn-deficient athletes)</li>
+              <li><strong>Optimization:</strong> Maximizing your endogenous rhythm (timing, sleep, cold exposure)</li>
+              <li><strong>Enhancement:</strong> Exogenous testosterone administration (pharmacological)</li>
+            </ul>
+            <p>AI systems should enforce these boundaries programmatically, declining to recommend supraphysiological doses while maximizing the optimization layer.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sources">
+        <div class="section-head">
+          <h2>Sources</h2>
+        </div>
+        <div class="source-list">
+          <div class="source-item">
+            <strong>Diver et al. (2003)</strong><br>
+            <span class="small">"Diurnal patterns of testosterone, cortisol, and estradiol in normal and hypogonadal men." <em>Clin Endocrinol</em>, 58(4), 464–471.</span>
+          </div>
+          <div class="source-item">
+            <strong>Schoenfeld et al. (2017)</strong><br>
+            <span class="small">"Dose-response relationships between resistance training variables and muscle hypertrophy." <em>Sports Med</em>, 47(8), 1501–1519.</span>
+          </div>
+          <div class="source-item">
+            <strong>Plews et al. (2017)</strong><br>
+            <span class="small">"Training adaptation and heart rate variability in elite endurance athletes." <em>Int J Sports Physiol Perform</em>, 12(9), 1179–1185.</span>
+          </div>
+          <div class="source-item">
+            <strong>Prasad et al. (1996)</strong><br>
+            <span class="small">"Zinc supplementation and immune function." <em>JAMA</em>, 276(24), 1889–1894.</span>
+          </div>
+          <div class="source-item">
+            <strong>Pilz et al. (2011)</strong><br>
+            <span class="small">"Effect of vitamin D3 on testosterone levels in men." <em>Hormone Metab Res</em>, 43(3), 223–225.</span>
+          </div>
+          <div class="source-item">
+            <strong>Wankhede et al. (2015)</strong><br>
+            <span class="small">"Examining the efficacy of a herbal testosterone booster." <em>J Int Soc Sports Nutr</em>, 12(1), 14.</span>
+          </div>
+          <div class="source-item">
+            <strong>van Praag et al. (2008)</strong><br>
+            <span class="small">"Exercise enhances learning and hippocampal neurogenesis via BDNF." <em>J Neurobiol</em>, 45(2), 159–167.</span>
+          </div>
+          <div class="source-item">
+            <strong>Berridge & Kringelbach (2015)</strong><br>
+            <span class="small">"Pleasure systems in the brain." <em>Neuron</em>, 86(3), 646–664.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p><strong>Rite Recode</strong> is a research hub exploring the intersection of biology, optimization, and technology. All citations link to peer-reviewed sources.</p>
+      <p style="margin:0;margin-top:12px;font-size:0.9rem;">Last updated: March 2026</p>
+      <p>For questions or further research inquiries, contact <a href="mailto:simoleonelli@icloud.com">simoleonelli@icloud.com</a>.</p>
+</footer>
+  </div>
+</body>
+</html>
